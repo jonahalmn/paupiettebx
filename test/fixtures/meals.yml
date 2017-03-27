@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2017-03-28 00:02:02
+  location: MyString
+  nbpart: 
+  user: one
+
+two:
+  date: 2017-03-28 00:02:02
+  location: MyString
+  nbpart: 
+  user: two

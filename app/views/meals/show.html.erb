@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @meal.date %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @meal.location %>
+</p>
+
+<p>
+  <strong>Nbpart:</strong>
+  <%= @meal.nbpart %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @meal.user %>
+  <%= @meal.user.fname %>&nbsp;<%= @meal.user.name %>
+</p>
+
+<%= link_to 'Edit', edit_meal_path(@meal) %> |
+<%= link_to 'Back', meals_path %>
