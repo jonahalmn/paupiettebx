@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170327220237) do
+ActiveRecord::Schema.define(version: 20170328083222) do
 
   create_table "meals", force: :cascade do |t|
     t.datetime "date"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 20170327220237) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_meals_on_user_id"
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string   "about"
+    t.string   "contact"
+    t.string   "dashboard"
+    t.string   "sign_up_senior"
+    t.string   "sign_up_student"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,6 +53,7 @@ ActiveRecord::Schema.define(version: 20170327220237) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.boolean  "gender"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true
