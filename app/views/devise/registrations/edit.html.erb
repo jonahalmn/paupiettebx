@@ -19,6 +19,46 @@
     <%= f.email_field :name, :class=> "form-control" %>
   </div>
 
+  <div class="field">
+    <%= f.label :Genre %><br />
+    <%= f.collection_radio_buttons :gender, [[true, 'Homme'] ,[false, 'Femme']], :first, :last %>
+  </div>
+
+  <div class="field">
+    <%= f.label :BirthDate %><br />
+    <%= f.date_field :dateofbirth %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Téléphone %><br />
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Intérêts %><br />
+    <%= f.text_field :intersts %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Adresse %><br />
+    <%= f.text_field :adress %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Ville %><br />
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Description %><br />
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.collection_radio_buttons :type, [[true, 'Marmiton'] ,[false, 'pauvre']], :first, :last %>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
