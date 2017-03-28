@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20170327220237) do
     t.string   "intersts"
     t.string   "adress"
     t.text     "description"
-    t.boolean  "type"
+    t.boolean  "role"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

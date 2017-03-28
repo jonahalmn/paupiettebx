@@ -3,8 +3,5 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
   end
 
-  def action
-    @user =   
-  end
 
 end

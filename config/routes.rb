@@ -14,10 +14,12 @@ Rails.application.routes.draw do
   get 'pages/contact'
 
   get 'pages/dashboard'
-  
+
+
   resources :pages
   devise_for :users
   get 'users/:id' => 'users#show', as: :user
+  
   resources :meals do
     collection do
       get 'me'

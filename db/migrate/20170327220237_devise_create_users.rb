@@ -13,7 +13,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :intersts
       t.string :adress
       t.text :description
-      t.boolean :type
+      t.boolean :role
 
 
       ## Recoverable
