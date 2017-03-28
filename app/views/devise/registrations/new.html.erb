@@ -31,6 +31,46 @@
     <%= f.text_field :fname %>
   </div>
 
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.collection_radio_buttons :gender, [[true, 'Homme'] ,[false, 'Femme']], :first, :last %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dateofbirth %><br />
+    <%= f.date_field :dateofbirth %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :intersts %><br />
+    <%= f.text_field :intersts %>
+  </div>
+
+  <div class="field">
+    <%= f.label :adress %><br />
+    <%= f.text_field :adress %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.collection_radio_buttons :type, [[true, 'Marmiton'] ,[false, 'pauvre']], :first, :last %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
