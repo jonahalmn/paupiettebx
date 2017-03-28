@@ -9,7 +9,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :Mot_de_passe %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -17,52 +17,52 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :Confirmation_MDP %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :Nom %><br />
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :fname %><br />
+    <%= f.label :Prénom %><br />
     <%= f.text_field :fname %>
   </div>
 
   <div class="field">
-    <%= f.label :gender %><br />
+    <%= f.label :Genre %><br />
     <%= f.collection_radio_buttons :gender, [[true, 'Homme'] ,[false, 'Femme']], :first, :last %>
   </div>
 
   <div class="field">
-    <%= f.label :dateofbirth %><br />
+    <%= f.label :BirthDate %><br />
     <%= f.date_field :dateofbirth %>
   </div>
 
   <div class="field">
-    <%= f.label :city %><br />
+    <%= f.label :Ville %><br />
     <%= f.text_field :city %>
   </div>
 
   <div class="field">
-    <%= f.label :phone %><br />
+    <%= f.label :Téléphone %><br />
     <%= f.text_field :phone %>
   </div>
 
   <div class="field">
-    <%= f.label :intersts %><br />
+    <%= f.label :Intérêts %><br />
     <%= f.text_field :intersts %>
   </div>
 
   <div class="field">
-    <%= f.label :adress %><br />
+    <%= f.label :Adresse %><br />
     <%= f.text_field :adress %>
   </div>
 
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :Description %><br />
     <%= f.text_area :description %>
   </div>
 
