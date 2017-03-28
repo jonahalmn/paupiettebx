@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/show'
+
   get 'pages/dashboard'
 
   get 'pages/sign_up_senior'
@@ -14,8 +16,8 @@ Rails.application.routes.draw do
   get 'pages/dashboard'
   
   resources :pages
-
   devise_for :users
+  get 'users/:id' => 'users#show', as: :user
   resources :meals do
     collection do
       get 'me'

@@ -1,11 +1,12 @@
+<div class="small-container">
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, :class=> "form-control" %>
   </div>
 
   <div class="field">
@@ -13,62 +14,62 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", :class=> "form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :Confirmation_MDP %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.label :Confirmation_MDP%>
+    <%= f.password_field :password_confirmation, autocomplete: "off", :class=> "form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :Nom %><br />
-    <%= f.text_field :name %>
+    <%= f.label :Nom%>
+    <%= f.text_field :name, :class=> "form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :Prénom %><br />
-    <%= f.text_field :fname %>
+    <%= f.label :Prénom%>
+    <%= f.text_field :fname, :class=> "form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :Genre %><br />
+    <%= f.label :Genre %>
     <%= f.collection_radio_buttons :gender, [[true, 'Homme'] ,[false, 'Femme']], :first, :last %>
   </div>
 
   <div class="field">
-    <%= f.label :BirthDate %><br />
+    <%= f.label :BirthDate %>
     <%= f.date_field :dateofbirth %>
   </div>
 
   <div class="field">
-    <%= f.label :Ville %><br />
-    <%= f.text_field :city %>
+    <%= f.label :Ville %>
+    <%= f.text_field :city, :class=> "form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :Téléphone %><br />
-    <%= f.text_field :phone %>
+    <%= f.label :Téléphone%>
+    <%= f.text_field :phone, :class=> "form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :Intérêts %><br />
-    <%= f.text_field :intersts %>
+    <%= f.label :Intérêts%>
+    <%= f.text_field :intersts, :class=> "form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :Adresse %><br />
-    <%= f.text_field :adress %>
+    <%= f.label :Adresse %>
+    <%= f.text_field :adress, :class=> "form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :Description %><br />
-    <%= f.text_area :description %>
+    <%= f.label :Description %>
+    <%= f.text_area :description, :class=> "form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :type %><br />
-    <%= f.collection_radio_buttons :type, [[true, 'Marmiton'] ,[false, 'pauvre']], :first, :last %>
+    <%= f.label :type %>
+    <%= f.collection_radio_buttons :type, [[true, 'Marmiton'] ,[false, 'pauvre']], :first, :last, :class=> "form-control" %>
   </div>
 
   <div class="actions">
@@ -77,3 +78,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
