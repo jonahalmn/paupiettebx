@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  get 'pages/dashboard'
+
+  get 'pages/sign_up_senior'
+
+  get 'pages/sign_up_student'
+
+  get 'pages/home'
+
+  get 'pages/about'
+
+  get 'pages/contact'
+
+  get 'pages/dashboard'
+  
+  resources :pages
+
   devise_for :users
   resources :meals do
     collection do
@@ -6,7 +22,7 @@ Rails.application.routes.draw do
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root "meals#index"
+  root 'pages#home'
 
   devise_scope :user do
     get '/signout', to: 'devise/sessions#destroy', as: :signout

@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Paupiette2</title>
+    <title>Paupau</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+  <header>
+  <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container container-fluid">
+    <a href="<%= pages_home_path %>" class="navbar-brand">Paupiette</a>
+
+         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="navbar-left nav navbar-nav">
+       <li><a class="link-paupiette" href="<%= pages_home_path %>">Accueil</a></li>
+    <li><a class="link-paupiette" href="<%= pages_contact_path %>">Contact</a></li>
+      </ul>
+    <div class="nav navbar-nav navbar-right">
+    <% if current_user %>
+    <ul class="nav navbar-nav">
+    <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.name %><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Mon profil</a></li>
+            <li><a href="<%= pages_dashboard_path %>">Tableau de bord</a></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to "Me déconnecter", signout_path %></li>
+          </ul>
+        </li>
+    </ul>
+    <% else %>
+    <button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to 'Je me connecte', '/login' %></button>
+    <button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to "Je m'inscris", '/signup' %></button>
+    <% end %>
+    </div>
+    </div>
+  </div>
+</nav></header>
+<div class="content">
     <%= yield %>
-    <%= link_to "deconnection", signout_path %>
+   </div>
   </body>
 </html>
