@@ -44,6 +44,8 @@ body {
   //
 
   // GENERAL
+
+
   font-family: $font1;
   font-size:17px;
 
@@ -91,6 +93,7 @@ body {
   // BODY HOME
 
   section.header-home {
+    background-image: url(/assets/background-home.jpg);
     background-color: rgba(0, 0, 0, 0.14);
     color: white;
     padding-top: 120px;
@@ -102,6 +105,11 @@ body {
   //HEADER
 
   //FOOTER
+  .navbar-default {
+    background-color: white;
+    border-color: white;
+}
+
   footer {
     background-color: #f7f7f7;
     padding: 15px;

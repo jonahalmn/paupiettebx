@@ -12,8 +12,11 @@
   <tbody>
     <% @participations.each do |participation| %>
       <tr>
+        <% @current_meal = Meal.find(participation.meal_id) %>
         <td><%= participation.user_id %></td>
         <td><%= participation.user_fname %></td>
+        <td><%= participation.meal_name %></td>
+        <td><%= link_to 'Voir repas', @current_meal %></td>
         <td><%= link_to 'Show', participation %></td>
         <td><%= link_to 'Edit', edit_participation_path(participation) %></td>
         <td><%= link_to 'Destroy', participation, method: :delete, data: { confirm: 'Are you sure?' } %></td>

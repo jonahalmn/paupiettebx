@@ -11,7 +11,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :city
       t.string :phone
       t.string :intersts
-      t.string :adress
+      t.integer :num
+      t.string :street
       t.text :description
       t.boolean :role
 

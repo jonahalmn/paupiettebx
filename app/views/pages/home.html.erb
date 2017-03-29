@@ -1,5 +1,5 @@
 <section class="header-home">
   <h1>Paupiette</h1>
-<%= link_to 'Je me connecte', new_user_session_path, :class => "btn btn-default navbar-btn btn-paupiette" %>
-<%= link_to "Je m'inscris", new_user_registration_path, :class => "btn btn-default navbar-btn btn-paupiette" %>
+    <%= link_to "Je suis un Paul", new_user_registration_path(:episode => false),  class: "btn btn-default navbar-btn btn-paupiette" %>
+    <%= link_to "Je suis une Paulette", new_user_registration_path(:episode => true), class: "btn btn-default navbar-btn btn-paupiette" %>
 </section>
