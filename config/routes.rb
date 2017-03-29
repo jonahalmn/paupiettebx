@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'pages#about'
+  root 'pages#home'
 
   devise_scope :user do
     get '/signout', to: 'devise/sessions#destroy', as: :signout
