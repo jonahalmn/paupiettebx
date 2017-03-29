@@ -24,9 +24,9 @@ class ParticipationsController < ApplicationController
   # POST /participations
   # POST /participations.json
   def create
-    @meal = Meal.find(1)
+    @meal = Meal.find(params[:from])
     @user = current_user
-    @participation = Participation.new(user_id: @user.id, user_fname: @user.fname, meal_name: @meal.name, meal_location: @meal.location)
+    @participation = Participation.new(user_id: @user.id, user_fname: @user.fname, meal_name: @meal.name, meal_location: @meal.location, meal_id: @meal.id)
     @participation.save!
 
       if @participation.save

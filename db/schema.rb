@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20170329124434) do
   create_table "participations", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "user_fname"
+    t.integer  "meal_id"
     t.string   "meal_name"
     t.string   "meal_location"
     t.string   "meal_organisator"
