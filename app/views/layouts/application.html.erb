@@ -11,14 +11,14 @@
   <header>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container container-fluid">
-        <a href="<%= pages_about_path %>" class="navbar-brand">Paupiette</a>
+        <a href="<%= pages_home_path %>" class="navbar-brand">Paupiette</a>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="navbar-left nav navbar-nav">
-            <li><a class="link-paupiette" href="<%= meals_path %>">Accueil</a></li>
+            <li><a class="link-paupiette" href="<%= meals_path %>">Déjeuners</a></li>
             <li><a class="link-paupiette" href="<%= pages_contact_path %>">Contact</a></li>
-            <li>
               <% if user_signed_in? %>
                 <% if current_user.role == true %>
+
                   <button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to 'Nouveau repas', new_meal_path %>
                   <%end%>
               <%end%>
