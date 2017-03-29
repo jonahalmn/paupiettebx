@@ -17,21 +17,21 @@
             <li><a class="link-paupiette" href="<%= meals_path %>">Accueil</a></li>
             <li><a class="link-paupiette" href="<%= pages_contact_path %>">Contact</a></li>
             <li>
-              <% if current_user.role == true %>
-                <button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to 'New Meal', new_meal_path %>
+              <% if user_signed_in? %>
+                <% if current_user.role == true %>
+                  <button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to 'Nouveau repas', new_meal_path %>
+                  <%end%>
               <%end%>
             </li>
           </ul>
           <div class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-
             <ul class="nav navbar-nav">
-
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.fname %><span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><%= link_to 'Mon compte', user_path(current_user) %></li>
-                  <li><a href="<%= pages_dashboard_path %>">Tableau de bord</a></li>
+                  <li><%= link_to 'Tableau de bord', pages_dashboard_path %></li>
                   <li role="separator" class="divider"></li>
                   <li><%= link_to "Me déconnecter", signout_path %></li>
                 </ul>
