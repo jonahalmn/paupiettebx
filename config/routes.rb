@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :participations
   get 'users/show'
 
   get 'pages/dashboard'
