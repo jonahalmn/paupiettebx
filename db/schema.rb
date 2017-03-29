@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20170329124434) do
   end
 
   create_table "participations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "user_fname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
