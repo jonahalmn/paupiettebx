@@ -20,9 +20,9 @@
       <tr>
         <td><%= meal.name %></td>
         <td><%= meal.date %></td>
-        <td><%= meal.location %></td>
+        <td><%= @user.adress %></td>
         <td><%= meal.nbpart %></td>
-        <td><%= @meal.fname %></td>
+        <td><%= @user.fname %></td>
         <td><%= link_to "J'y vais", participations_path(:from => meal.id), method: :create %></td>
         <td><%= link_to 'Show', meal %></td>
         <td><%= link_to 'Edit', edit_meal_path(meal) %></td>
