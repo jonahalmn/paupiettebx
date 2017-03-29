@@ -1,15 +1,15 @@
+
 <section class="header-home">
 <h1 class="h1-home">Paupiette</h1>
 </section>
 
-<div class="container">
-<h1>Pages#about</h1>
-<p>Find me in app/views/pages/about.html.erb</p>
-</div>
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+
+
 
 <h1>Tu veux rejoindre l'aventure ?</h1>
 <h3>Qui es-tu ?</h3>
-<% if !current_user %>
-  <button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to "Je suis un Paul", new_user_registration_path(:episode => true) %></button>
+
+  <button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to "Je suis paul", new_user_registration_path(:episode => true)%></button>
   <button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to "Je suis une Paulette", new_user_registration_path(:episode => false) %></button>
-<% end %>
