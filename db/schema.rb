@@ -13,6 +13,10 @@
 ActiveRecord::Schema.define(version: 20170329124434) do
 
   create_table "meals", force: :cascade do |t|
+    t.string   "name"
+    t.string   "entree"
+    t.string   "plat"
+    t.string   "dessert"
     t.datetime "date"
     t.string   "location"
     t.integer  "nbpart"
