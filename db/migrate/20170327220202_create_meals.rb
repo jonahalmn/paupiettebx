@@ -8,7 +8,7 @@ class CreateMeals < ActiveRecord::Migration[5.0]
       t.string :pdesc
       t.string :dessert
       t.string :ddesc
-      t.datetime :date
+      t.date :date
       t.string :location
       t.integer :nbpart
       t.integer :user_id

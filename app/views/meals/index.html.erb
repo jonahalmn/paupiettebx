@@ -6,6 +6,7 @@
 <table>
   <thead>
     <tr>
+      <th>Nom</th>
       <th>Date</th>
       <th>Location</th>
       <th>Nbpart</th>
@@ -17,6 +18,7 @@
   <tbody>
     <% @meals.each do |meal| %>
       <tr>
+        <td><%= meal.name %></td>
         <td><%= meal.date %></td>
         <td><%= meal.location %></td>
         <td><%= meal.nbpart %></td>

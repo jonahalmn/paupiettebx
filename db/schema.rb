@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20170329124434) do
     t.string   "pdesc"
     t.string   "dessert"
     t.string   "ddesc"
-    t.datetime "date"
+    t.date     "date"
     t.string   "location"
     t.integer  "nbpart"
     t.integer  "user_id"
