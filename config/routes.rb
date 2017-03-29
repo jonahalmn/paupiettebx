@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :pages
   devise_for :users
   get 'users/:id' => 'users#show', as: :user
-  get 'signups' => 'devise/registrations#student'
+
   resources :meals do
     collection do
       get 'me'
