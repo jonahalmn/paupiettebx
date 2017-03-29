@@ -46,6 +46,7 @@ body {
   // GENERAL
   font-family: $font1;
   font-size:17px;
+  padding-top: 50px;
 
   ul, ol {
     margin: 0;
@@ -62,6 +63,24 @@ body {
     color: $black;
     text-decoration: none;
   }
+
+  .btn-paupiette {
+    background-color: #ed694c;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+}
+  // BODY HOME
+
+  section.header-home {
+    background-color: rgba(0, 0, 0, 0.14);
+    color: white;
+    padding-top: 120px;
+    height: 350px;
+    text-align: center;
+}
 
   //HEADER
 
