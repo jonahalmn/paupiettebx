@@ -26,15 +26,30 @@
     <%= f.text_field :entree %>
   </div>
 
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_field :edesc %>
+    </div>
+
   <div class="field">
     <%= f.label :Plat %>
     <%= f.text_field :plat %>
   </div>
 
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_field :pdesc %>
+    </div>
+
   <div class="field">
     <%= f.label :Dessert %>
     <%= f.text_field :dessert %>
   </div>
+
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_field :ddesc %>
+    </div>
 
   <div class="field">
     <%= f.label :date %>
@@ -43,7 +58,7 @@
 
   <div class="field">
     <%= f.label :participants %>
-    <%= f.text_field :nbpart %>
+    <%= f.select(:nbpart, 1...5) %>
   </div>
 
   <div class="actions">
