@@ -16,10 +16,8 @@ ActiveRecord::Schema.define(version: 20170329124434) do
     t.datetime "date"
     t.string   "location"
     t.integer  "nbpart"
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_meals_on_user_id"
   end
 
   create_table "participations", force: :cascade do |t|
