@@ -39,14 +39,23 @@ body {
   $greyfont: rgba(0, 0, 0, 0.5);
   $pinkwhite: #f7f7f7;
   $black: #494848;
-  $orange: #ED694C;
-  $orange-hover: #db5639;
+  $couleur1: #4c256b;
+  $couleur1hover: #341151;
   //
 
   // GENERAL
   font-family: $font1;
   font-size:17px;
-  padding-top: 50px;
+
+  .small-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+  }
+
+  .glyphicon {
+    margin: 0px 10px;
+}
 
   ul, ol {
     margin: 0;
@@ -65,12 +74,19 @@ body {
   }
 
   .btn-paupiette {
-    background-color: #ed694c;
+    background-color: $couleur1;
+    color: white;
 
     a {
       color: white;
       text-decoration: none;
     }
+}
+
+.btn-paupiette:hover {
+  background-color: $couleur1hover;
+  color: white;
+  text-decoration: none;
 }
   // BODY HOME
 
@@ -81,6 +97,7 @@ body {
     height: 350px;
     text-align: center;
 }
+
 
   //HEADER
 
@@ -105,7 +122,7 @@ body {
           font-size: 0.8em;
           letter-spacing: 0.04em;
           margin: 10px auto 5px auto;
-          color: $orange;
+          color: $couleur1;
         }
       }
     }
@@ -117,7 +134,7 @@ body {
 
     .follow-footer {
       display: inline-block;
-      color: $orange;
+      color: $couleur1;
       text-transform: uppercase;
       margin-right: 10px;
       vertical-align: middle;

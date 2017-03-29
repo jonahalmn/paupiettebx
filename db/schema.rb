@@ -20,23 +20,20 @@ ActiveRecord::Schema.define(version: 20170329124434) do
     t.string   "pdesc"
     t.string   "dessert"
     t.string   "ddesc"
-    t.date     "date"
+    t.datetime "date"
     t.string   "location"
     t.integer  "nbpart"
     t.integer  "user_id"
-    t.string   "organisator"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "user_fname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "participations", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "user_fname"
-    t.string   "meal_name"
-    t.string   "meal_location"
-    t.string   "meal_organisator"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

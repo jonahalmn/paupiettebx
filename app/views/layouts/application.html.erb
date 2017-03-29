@@ -9,42 +9,47 @@
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container container-fluid">
-        <a href="<%= pages_about_path %>" class="navbar-brand">Paupiette</a>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="navbar-left nav navbar-nav">
-            <li><a class="link-paupiette" href="<%= meals_path %>">Accueil</a></li>
-            <li><a class="link-paupiette" href="<%= pages_contact_path %>">Contact</a></li>
-            <li>
-              <% if user_signed_in? %>
-                <% if current_user.role == true %>
-                  <button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to 'Nouveau repas', new_meal_path %>
-                  <%end%>
-              <%end%>
-            </li>
-          </ul>
-          <div class="nav navbar-nav navbar-right">
-            <% if user_signed_in? %>
-            <ul class="nav navbar-nav">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.fname %><span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><%= link_to 'Mon compte', user_path(current_user) %></li>
-                  <li><%= link_to 'Tableau de bord', pages_dashboard_path %></li>
-                  <li role="separator" class="divider"></li>
-                  <li><%= link_to "Me déconnecter", signout_path %></li>
-                </ul>
-              </li>
+    <nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Paupiette</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+        <li><a class="link-paupiette" href="<%= meals_path %>">Accueil</a></li>
+        <li><a class="link-paupiette" href="<%= pages_contact_path %>">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.fname %><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'Mon compte', user_path(current_user) %></li>
+              <li><%= link_to 'Tableau de bord', pages_dashboard_path %></li>
+              <li role="separator" class="divider"></li>
+              <li><%= link_to "Me déconnecter", signout_path %></li>
             </ul>
-            <% else %>
-            <button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to 'Je me connecte', new_user_session_path %></button>
-            <button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to "Je m'inscris", new_user_registration_path %></button>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </nav></header>
+          </li>
+        </ul>
+        <% else %>
+        <%= link_to 'Je me connecte', new_user_session_path, :class => "btn btn-default navbar-btn btn-paupiette" %>
+        <%= link_to "Je m'inscris", new_user_registration_path, :class => "btn btn-default navbar-btn btn-paupiette" %>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  </header>
     <div class="content">
       <%= yield %>
     </div>
