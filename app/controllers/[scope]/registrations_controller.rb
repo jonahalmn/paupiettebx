@@ -3,10 +3,17 @@ class [scope]::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+def student
+  @genre = "student"
+end
 
+
+protected
+
+  def update_resource(resource, params)
+    resource.update_without_password(params)
+  end
+end
   # POST /resource
   # def create
   #   super
