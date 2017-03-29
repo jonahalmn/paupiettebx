@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <p id="notice"><%= notice %></p>
 
 <h1>Meals</h1>
@@ -29,5 +30,10 @@
 </table>
 
 <br>
-
+<% if current_user.role == true %>
 <%= link_to 'New Meal', new_meal_path %>
+<%end%>
+<% else %>
+<p> Vous devez etre connecté pour acceder a cette page </p>
+<%= link_to 'acceuil', pages_about_path %>
+<% end %>
