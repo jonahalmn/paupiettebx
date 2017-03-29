@@ -11,18 +11,19 @@
   <header>
   <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container container-fluid">
-    <a href="<%= pages_home_path %>" class="navbar-brand">Paupiette</a>
+    <a href="<%= pages_about_path %>" class="navbar-brand">Paupiette</a>
 
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="navbar-left nav navbar-nav">
-       <li><a class="link-paupiette" href="<%= pages_home_path %>">Accueil</a></li>
+       <li><a class="link-paupiette" href="<%= meals_path %>">Accueil</a></li>
     <li><a class="link-paupiette" href="<%= pages_contact_path %>">Contact</a></li>
       </ul>
     <div class="nav navbar-nav navbar-right">
     <% if user_signed_in? %>
     <ul class="nav navbar-nav">
+
     <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %><span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.fname %><span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><%= link_to 'Mon compte', user_path(current_user) %></li>
             <li><a href="<%= pages_dashboard_path %>">Tableau de bord</a></li>

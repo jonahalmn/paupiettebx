@@ -30,7 +30,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, :class=> "form-control" %>
+    <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
@@ -71,17 +71,12 @@
 
   <div class="field">
     <%= f.label :type %><br />
-    <%= f.collection_radio_buttons :role, [[true, 'Marmiton'] ,[false, 'pauvre']], :first, :last %>
+    <%= f.collection_radio_buttons :role, [[true, 'Marmiton'] ,[false, 'Etudiant']], :first, :last %>
   </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-
   <div class="field">
-    <%= f.label :current_password, :class=> "form-control" %> <i>(we need your current password to confirm your changes)</i>
-    <%= f.password_field :current_password, autocomplete: "off", :class=> "form-control" %>
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+    <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
   <div class="actions">
