@@ -1,2 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<section class="header-home">
+<div class="container">
+  <div class="baseline">
+    <div class="baseline-firstline">
+      Ce <strong>midi</div>,
+    </div>
+    <div class="baseline-secondline">
+      c'est chez <strong>Mamie</<strong
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<h1>Tu veux rejoindre l'aventure ?</h1>
+<h3>Qui es-tu ?</h3>
+<% if !current_user %>
+  <button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to "Je suis un Paul", new_user_registration_path(:episode => false) %></button>
+  <button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to "Je suis une Paulette", new_user_registration_path(:episode => true) %></button>
+<% end %>
