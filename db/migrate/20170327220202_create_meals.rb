@@ -12,7 +12,8 @@ class CreateMeals < ActiveRecord::Migration[5.0]
       t.string :location
       t.integer :nbpart
       t.integer :user_id
-      t.string :user_fname
+      t.string :organisator
+       
 
       t.timestamps
     end

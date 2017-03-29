@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   get 'pages/dashboard'
 
-
+  post 'participation/new' => 'participations#create'
   resources :pages
   devise_for :users, :controllers => { registrations: "registrations" }
   get 'users/:id' => 'users#show', as: :user

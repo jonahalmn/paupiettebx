@@ -16,6 +16,7 @@ class MealsController < ApplicationController
   # GET /meals/new
   def new
     @meal = Meal.new
+    @user = current_user
   end
 
   # GET /meals/1/edit

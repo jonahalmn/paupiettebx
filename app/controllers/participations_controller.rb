@@ -24,17 +24,18 @@ class ParticipationsController < ApplicationController
   # POST /participations
   # POST /participations.json
   def create
-    @participation = Participation.new(participation_params)
+    @meal = Meal.find(1)
+    @user = current_user
+    @participation = Participation.new(user_id: @user.id, user_fname: @user.fname, meal_name: @meal.name, meal_location: @meal.location)
+    @participation.save!
 
-    respond_to do |format|
       if @participation.save
-        format.html { redirect_to @participation, notice: 'Participation was successfully created.' }
-        format.json { render :show, status: :created, location: @participation }
-      else
-        format.html { render :new }
-        format.json { render json: @participation.errors, status: :unprocessable_entity }
+        redirect_to @participation, notice: 'Participation was successfully created.'
+        else
+        render :index
+
       end
-    end
+
   end
 
   # PATCH/PUT /participations/1
