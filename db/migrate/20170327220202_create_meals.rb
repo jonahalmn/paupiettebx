@@ -11,7 +11,8 @@ class CreateMeals < ActiveRecord::Migration[5.0]
       t.datetime :date
       t.string :location
       t.integer :nbpart
-    #  t.references :user, foreign_key: true
+      t.integer :user_id
+      t.string :user_fname
 
       t.timestamps
     end

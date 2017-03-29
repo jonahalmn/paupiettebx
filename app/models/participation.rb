@@ -1,3 +1,4 @@
 class Participation < ApplicationRecord
-  has_many :user
+  belongs_to :meal
+  has_many :users
 end
