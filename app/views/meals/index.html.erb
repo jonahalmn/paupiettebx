@@ -20,7 +20,7 @@
       <tr>
         <td><%= meal.name %></td>
         <td><%= meal.date %></td>
-        <td><%= @user.adress %></td>
+        <td>rue <%= @user.street %></td>
         <td><%= meal.nbpart %></td>
         <td><%= @user.fname %></td>
         <td><%= link_to "J'y vais", participations_path(:from => meal.id), method: :create %></td>
