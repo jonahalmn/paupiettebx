@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
 
   resources :pages
-  devise_for :users
+  devise_for :users, :controllers => { registrations: "registrations" }
   get 'users/:id' => 'users#show', as: :user
 
   resources :meals do

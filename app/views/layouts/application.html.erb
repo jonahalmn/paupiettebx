@@ -33,8 +33,8 @@
         </li>
     </ul>
     <% else %>
-    <button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to 'Je me connecte', '/users/sign_in' %></button>
-    <button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to "Je m'inscris", '/users/sign_up' %></button>
+    <button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to 'Je me connecte', new_user_session_path %></button>
+    <button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to "Je m'inscris", new_user_registration_path %></button>
     <% end %>
     </div>
     </div>
