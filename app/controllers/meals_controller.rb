@@ -5,10 +5,8 @@ class MealsController < ApplicationController
   # GET /meals.json
   def index
     @meals = Meal.all
-
     @user = current_user
 
-    @meal = current_user
 
   end
 

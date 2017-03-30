@@ -21,6 +21,7 @@ class ParticipationsController < ApplicationController
   def edit
   end
 
+
   # POST /participations
   # POST /participations.json
   def create
