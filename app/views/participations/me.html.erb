@@ -11,15 +11,18 @@
   </thead>
 
   <tbody>
+    <% if current_user == false %>
     <% @participations.each do |participation| %>
 
       <tr>
       <% @current_meal = Meal.find(participation.meal_id) %>
         <td><%= participation.user_fname %></td>
         <td><%= participation.meal_name %></td>
+        <td><%= link_to 'Carte', "http://maps.google.com/?q="+@current_meal.user.street, :target => "_blank"  %></td>
         <td><%= link_to 'Voir repas', @current_meal %></td>
         <td><%= link_to 'Annuler', participation, method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir annuler votre réservations ?' } %></td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

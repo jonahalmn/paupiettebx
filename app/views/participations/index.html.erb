@@ -16,6 +16,7 @@
         <td><%= participation.user_id %></td>
         <td><%= participation.user_fname %></td>
         <td><%= participation.meal_name %></td>
+        <td><%= link_to 'Carte', "http://maps.google.com/?q="+meal.user.street, :target => "_blank"  %></td>
         <td><%= link_to 'Voir repas', @current_meal %></td>
         <td><%= link_to 'Ne plus participer', participation, method: :delete, data: { confirm: 'Êtes-vous sûr ?' } %></td>
       </tr>

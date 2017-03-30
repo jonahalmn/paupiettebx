@@ -4,10 +4,12 @@ class MealsController < ApplicationController
   # GET /meals
   # GET /meals.json
   def index
+    @me = false
     now = Date.today.to_s
     if Meal.count > 0
     @meals = Meal.where("date >= ?", Time.current)
     end
+    @title = "Repas à Venir"
     @user = current_user
   end
 
@@ -28,7 +30,11 @@ class MealsController < ApplicationController
 
   # GET /meals/me
   def me
-    @meals = current_user.meals
+    @me = true
+    @title = "Les repas que vous organisez"
+    @meals = current_user.meals.where("date >= ?", Time.current)
+    @prev_meals = current_user.meals.where("date <= ?", Time.current)
+
     render :index
   end
 

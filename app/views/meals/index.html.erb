@@ -1,7 +1,7 @@
 <% if user_signed_in?%>
 <p id="notice"><%= notice %></p>
 <div class="container">
-  <h1>Repas</h1>
+  <h1><%= @title %></h1>
 
 
   <table class='table panel panel-default' >
@@ -38,7 +38,7 @@
           <% end %>
             <% end %>
           <td><%= link_to 'Voir plus', meal %></td>
-          <% if current_user.role == true && @user.id == meal.user.id %>
+          <% if current_user.role == true && current_user.id == meal.user.id %>
             <td><%= link_to 'Modifier', edit_meal_path(meal) %></td>
             <td><%= link_to 'Annuler', meal, method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir annuler le repas ?' } %></td>
           <% end %>
@@ -46,6 +46,37 @@
 
       <% end %>
     </tbody>
+<% if @me == true %>
+
+
+    <tbody class="panel-body">
+
+      <% @prev_meals.each do |meal| %>
+        <tr><td> <p> Passés </p> </td></tr>
+        <tr>
+          <td><%= meal.name %></td>
+          <td><%= meal.date.to_formatted_s(:short) %></td>
+          <td><%= meal.user.street %></td>
+          <td><%= meal.nbpart - (Participation.where(:meal_id => meal.id).count)%></td>
+          <td><%= meal.user.first_name %></td>
+          <td>Entrée + Plat + Dessert </td>
+          <td><%= link_to 'Carte', "http://maps.google.com/?q="+meal.user.street, :target => "_blank" %></td>
+          <% if current_user.role == false %>
+            <% if !Participation.where(:user_id => @user.id, :meal_id => meal.id).exists? %>
+          <td><%= link_to "J'y vais", participations_path(:from => meal.id), method: :create %></td>
+          <% end %>
+            <% end %>
+          <td><%= link_to 'Voir plus', meal %></td>
+          <% if current_user.role == true && current_user.id == meal.user.id %>
+            <td><%= link_to 'Modifier', edit_meal_path(meal) %></td>
+            <td><%= link_to 'Annuler', meal, method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir annuler le repas ?' } %></td>
+          <% end %>
+        </tr>
+
+      <% end %>
+      <%end%>
+    </tbody>
+
   </table>
 
   <br>

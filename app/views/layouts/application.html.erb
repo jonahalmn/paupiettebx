@@ -36,7 +36,11 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.first_name %><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
                 <ul class="dropdown-menu">
                   <li><%= link_to 'Mon compte', user_path(current_user) %></li>
+                  <% if current_user.role == false %>
                     <li><%= link_to 'Mon tableau de bord', dashboard_path %></button></li>
+                    <%else%>
+                    <li><%= link_to 'Mon tableau de bord', me_meals_path %></button></li>
+                    <%end%>
                   <li role="separator" class="divider"></li>
                   <li><%= link_to "Me déconnecter", signout_path %></li>
                 </ul>

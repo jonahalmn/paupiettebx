@@ -144,7 +144,8 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def account_update_params
-    params.require(:user).permit(:name, :first_name, :email, :password, :password_confirmation, :gender, :dateofbirth, :num, :street, :city, :phone, :description, :intersts, :role, :password_field, :current_password)
+
+    params.require(:user).permit(:name, :first_name, :email, :password, :password_confirmation, :gender, :dateofbirth, :num, :street, :city, :phone, :description, :intersts, :role, :password_field)
   end
 
   def translation_scope
