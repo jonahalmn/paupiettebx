@@ -32,7 +32,7 @@
           <td><%= link_to "J'y vais", participations_path(:from => meal.id), method: :create %></td>
           <% end %>
           <td><%= link_to 'Show', meal %></td>
-          <% if current_user.grandmother && @user.id == meal.user.id %>
+          <% if current_user.role == true && @user.id == meal.user.id %>
             <td><%= link_to 'Edit', edit_meal_path(meal) %></td>
             <td><%= link_to 'Destroy', meal, method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir supprimer le repas ?' } %></td>
           <% end %>
@@ -43,7 +43,7 @@
   </table>
 
   <br>
-  <% if current_user.grandmother %>
+  <% if current_user.role == true %>
     <%= link_to 'Nouveau repas', new_meal_path, :class => "btn btn-default btn-paupiette" %>
   <%end%>
 <% end %>

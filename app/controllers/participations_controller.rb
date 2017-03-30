@@ -38,7 +38,7 @@ class ParticipationsController < ApplicationController
 
     @meal = Meal.find(params[:from])
     @user = current_user
-    @participation = Participation.new(user_id: @user.id, user_fname: @user.fname, meal_name: @meal.name, meal_location: @meal.location, meal_id: @meal.id)
+    @participation = Participation.new(user_id: @user.id, user_fname: @user.first_name, meal_name: @meal.name, meal_street: @meal.user.street, meal_id: @meal.id)
     @participation.save!
 
 

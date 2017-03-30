@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20170330142903) do
     t.integer  "nbpart"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "participations", force: :cascade do |t|
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170330142903) do
     t.string   "meal_organisator"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "meal_street"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,7 +50,7 @@ ActiveRecord::Schema.define(version: 20170330142903) do
     t.integer  "street_number"
     t.string   "street"
     t.text     "description"
-    t.integer  "role"
+    t.boolean  "role"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

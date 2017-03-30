@@ -23,7 +23,7 @@
             <li><a class="link-paupiette" href="<%= meals_path %>">Déjeuners</a></li>
             <li><a class="link-paupiette" href="<%= pages_contact_path %>">Contact</a></li>
               <% if user_signed_in? %>
-                <% if current_user.grandmother? %>
+                <% if current_user.role == true %>
                   <li><button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to 'Nouveau repas', new_meal_path %></button></li>
                 <%end%>
               <%end%>
