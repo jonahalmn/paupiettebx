@@ -84,10 +84,6 @@
     <%= f.collection_radio_buttons :role, [[true, 'Marmiton'] ,[false, 'Etudiant']], :first, :last %>
   </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
 
   <div class="actions">
     <%= f.submit "Update" %>
