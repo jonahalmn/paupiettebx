@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20170330142903) do
     t.boolean  "gender"
     t.date     "dateofbirth"
     t.string   "city"
+    t.string   "zip_code"
     t.string   "phone"
     t.string   "interests"
     t.integer  "street_number"

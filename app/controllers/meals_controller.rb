@@ -4,9 +4,11 @@ class MealsController < ApplicationController
   # GET /meals
   # GET /meals.json
   def index
-    @meals = Meal.all
+    now = Date.today.to_s
+    if Meal.count > 0
+    @meals = Meal.where("date >= ?", Time.current)
+    end
     @user = current_user
-
   end
 
   # GET /meals/1
