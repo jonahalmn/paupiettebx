@@ -136,13 +136,18 @@ header.scrolldown img {
 
 
   section.header-home {
-    background: url( asset-path('background-home.jpg') );
+    background: url( asset-path('image_repas.png') );
+        background-color: white;
         background-position: center;
         background-size: cover;
         background-color: rgba(0, 0, 0, 0.14);
-        color: white;
+        color: black;
     text-align: center;
-    height: 500px;
+}
+
+.inner-container-left {
+    width: 50%;
+    padding: 80px 0px;
 }
 
 .selfies {
@@ -198,6 +203,9 @@ header.scrolldown img {
 .baseline {
     font-size: 2.5em;
     font-weight: lighter;
+    max-width: 540px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .baseline-firstline {
@@ -211,7 +219,6 @@ header.scrolldown img {
 
 .baseline-secondline strong {
     font-family: $font2;
-    color: white;
     font-size: 1.6em;
 }
 
