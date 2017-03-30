@@ -23,15 +23,18 @@
         <tr>
           <td><%= meal.name %></td>
           <td><%= meal.date %></td>
-          <td>Rue<%= @user.street %></td>
+          <td>Rue<%= @user.street %> à <%= @user.city %></td>
           <td><%= meal.nbpart %></td>
           <td><%= @user.fname %></td>
-          <% if !Participation.where(:user_id => @user.id, :meal_id => meal.id).exists? %>
+          <% if !Participation.where(:user_id => @user.id, :meal_id => meal.id).exists? && current_user.role == false %>
           <td><%= link_to "J'y vais", participations_path(:from => meal.id), method: :create %></td>
           <% end %>
           <td><%= link_to 'Show', meal %></td>
-          <td><%= link_to 'Edit', edit_meal_path(meal) %></td>
-          <td><%= link_to 'Destroy', meal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% now = Time.now %>
+          <% if current_user.role == true %>
+            <td><%= link_to 'Edit', edit_meal_path(meal) %></td>
+            <td><%= link_to 'Destroy', meal, method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir supprimer le repas ?' } %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
