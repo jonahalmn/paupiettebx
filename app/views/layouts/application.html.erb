@@ -32,7 +32,7 @@
                   <li><%= link_to 'Mon compte', user_path(current_user) %></li>
                   <li><%= link_to 'Tableau de bord', pages_dashboard_path %></li>
                   <% if current_user.role == false %>
-                    <li><%= link_to 'Mon agenda', 'me', class: "btn btn-default navbar-btn btn-paupiette" %></button></li>
+                    <li><%= link_to 'Mon agenda', dashboard_path, class: "btn btn-default navbar-btn btn-paupiette" %></button></li>
                     <%end%>
                   <li role="separator" class="divider"></li>
                   <li><%= link_to "Me déconnecter", signout_path %></li>
