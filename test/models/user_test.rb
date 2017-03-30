@@ -6,17 +6,17 @@
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
 #  name                   :string           default(""), not null
-#  fname                  :string           default(""), not null
+#  first_name             :string           default(""), not null
 #  gender                 :boolean
 #  dateofbirth            :date
 #  city                   :string
 #  zip_code               :string
 #  phone                  :string
-#  intersts               :string
-#  num                    :integer
+#  interests              :string
+#  street_number          :integer
 #  street                 :string
 #  description            :text
-#  role                   :boolean
+#  role                   :integer
 #  reset_password_token   :string
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime

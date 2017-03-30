@@ -10,24 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170329124434) do
+ActiveRecord::Schema.define(version: 20170330142903) do
 
   create_table "meals", force: :cascade do |t|
     t.string   "name"
     t.string   "entree"
-    t.string   "edesc"
     t.string   "plat"
-    t.string   "pdesc"
     t.string   "dessert"
-    t.string   "ddesc"
     t.date     "date"
-    t.string   "location"
     t.integer  "nbpart"
-    t.integer  "user_id"
-    t.string   "organisator"
-    t.string   "user_fname"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "participations", force: :cascade do |t|
@@ -45,17 +38,17 @@ ActiveRecord::Schema.define(version: 20170329124434) do
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "name",                   default: "", null: false
-    t.string   "fname",                  default: "", null: false
+    t.string   "first_name",             default: "", null: false
     t.boolean  "gender"
     t.date     "dateofbirth"
     t.string   "city"
     t.string   "zip_code"
     t.string   "phone"
-    t.string   "intersts"
-    t.integer  "num"
+    t.string   "interests"
+    t.integer  "street_number"
     t.string   "street"
     t.text     "description"
-    t.boolean  "role"
+    t.integer  "role"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

@@ -1,7 +1,12 @@
 <div class="container">
 <h1>Mon profil</h1>
 
-<p>Prénom : <%= @user.fname%></p>
+<% if @user.role == true %>
+
+<% end %>
+
+
+<p>Prénom : <%= @user.first_name%></p>
 <p>Nom : <%= @user.name%></p>
 <p>Je suis un : <%= @user.role%></p>
 <p>Adresse mail : <%= @user.email%></p>
@@ -9,7 +14,7 @@
 <p>Date de naissance : <%= @user.dateofbirth%></p>
 <p>Genre : <%= @user.gender%></p>
 <p>Description : <%= @user.description%></p>
-<p>Intérêts : <%= @user.intersts%></p>
+<p>Intérêts : <%= @user.interests%></p>
 
 
 

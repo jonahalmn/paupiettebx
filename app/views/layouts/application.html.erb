@@ -23,8 +23,8 @@
             <li><a class="link-paupiette" href="<%= meals_path %>">Déjeuners</a></li>
             <li><a class="link-paupiette" href="<%= pages_contact_path %>">Contact</a></li>
               <% if user_signed_in? %>
-                <% if current_user.role == true %>
-                  <li><%= link_to 'Nouveau repas', new_meal_path, class: "btn btn-default navbar-btn btn-paupiette" %></li>
+                <% if current_user.grandmother? %>
+                  <li><button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to 'Nouveau repas', new_meal_path %></button></li>
                 <%end%>
               <%end%>
             </li>
@@ -33,7 +33,7 @@
             <% if user_signed_in? %>
             <ul class="nav navbar-nav">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.fname %><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.first_name %><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
                 <ul class="dropdown-menu">
                   <li><%= link_to 'Mon compte', user_path(current_user) %></li>
                     <li><%= link_to 'Mon tableau de bord', dashboard_path %></button></li>
