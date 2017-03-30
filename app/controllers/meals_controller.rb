@@ -16,6 +16,8 @@ class MealsController < ApplicationController
   # GET /meals/1
   # GET /meals/1.json
   def show
+  #  @current_meal = Meal.find(participation.meal_id)
+    @meals = Participation.where(:meal_id => @meal.id)
   end
 
   # GET /meals/new
