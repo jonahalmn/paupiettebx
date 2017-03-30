@@ -13,8 +13,10 @@
     </div>
   </div>
   <h2>Plutôt mamie gateau ou jeune prolo ?</H2>
+    <% if !user_signed_in? %>
     <%= link_to "Je suis chef de cuisine !", new_user_registration_path(:episode => true),  class: "btn btn-default navbar-btn btn-paupiette btn-paupiette-home" %>
     <%= link_to "Je suis étudiant !", new_user_registration_path(:episode => false), class: "btn btn-default navbar-btn btn-paupiette btn-paupiette-home" %>
+    <% end %>
 </section>
 <section class="selfies">
   <div class="container">
