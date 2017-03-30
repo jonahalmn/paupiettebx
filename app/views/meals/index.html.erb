@@ -35,10 +35,7 @@
 
   <br>
   <% if current_user.role == true %>
-  <%= link_to 'Nouveau repas', new_meal_path, :class => "btn btn-default btn-paupiette" %>
+    <%= link_to 'Nouveau repas', new_meal_path, :class => "btn btn-default btn-paupiette" %>
   <%end%>
-  <% else %>
-  <p> Vous devez etre connecté pour acceder a cette page </p>
-  <%= link_to 'acceuil', pages_about_path %>
-  <% end %>
+<% end %>
 </div>
