@@ -26,7 +26,11 @@
           <td><%= meal.user.street %></td>
           <td><%= meal.nbpart %></td>
           <td><%= meal.user.fname %></td>
-          <% if !Participation.where(:user_id => @user.id, :meal_id => meal.id).exists? && current_user.role == false %>
+
+          <td><%= link_to 'voir sur maps', "http://maps.google.com/?q="+meal.user.street, :target => "_blank" %></td>
+
+          <% if !Participation.where(:user_id => @user.id, :meal_id => meal.id).exists? %>
+
           <td><%= link_to "J'y vais", participations_path(:from => meal.id), method: :create %></td>
           <% end %>
           <td><%= link_to 'Show', meal %></td>
@@ -35,6 +39,7 @@
             <td><%= link_to 'Destroy', meal, method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir supprimer le repas ?' } %></td>
           <% end %>
         </tr>
+
       <% end %>
     </tbody>
   </table>
