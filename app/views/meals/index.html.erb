@@ -26,12 +26,11 @@
           <td><%= meal.user.street %></td>
           <td><%= meal.nbpart %></td>
           <td><%= meal.user.fname %></td>
-          <% if !Participation.where(:user_id => @user.id, :meal_id => meal.id).exists? %>
+          <% if !Participation.where(:user_id => @user.id, :meal_id => meal.id).exists? && current_user.role == false %>
           <td><%= link_to "J'y vais", participations_path(:from => meal.id), method: :create %></td>
           <% end %>
           <td><%= link_to 'Show', meal %></td>
-          <% now = Time.now %>
-          <% if current_user.role == true %>
+          <% if current_user.role == true && @user.id == meal.user.id %>
             <td><%= link_to 'Edit', edit_meal_path(meal) %></td>
             <td><%= link_to 'Destroy', meal, method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir supprimer le repas ?' } %></td>
           <% end %>
@@ -44,5 +43,42 @@
   <% if current_user.role == true %>
     <%= link_to 'Nouveau repas', new_meal_path, :class => "btn btn-default btn-paupiette" %>
   <%end%>
+<% end %>
+</div>
+
+
+<% if !user_signed_in? %>
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>Repas</h1>
+
+
+  <table class='table panel panel-default' >
+    <thead class="panel-heading">
+
+    <tr>
+      <th>Nom</th>
+      <th>Date</th>
+      <th>Lieu</th>
+      <th>Nombre de participant</th>
+      <th>Organisateur</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+    <tbody class="panel-body">
+
+      <% @meals.each do |meal| %>
+        <tr>
+          <td><%= meal.name %></td>
+          <td><%= meal.date %></td>
+          <td><%= meal.user.street %></td>
+          <td><%= meal.nbpart %></td>
+          <td><%= meal.user.fname %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 <% end %>
 </div>
