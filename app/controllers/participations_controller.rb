@@ -5,6 +5,7 @@ class ParticipationsController < ApplicationController
   # GET /participations.json
   def index
     @participations = Participation.all
+    @user = current_user
   end
 
   # GET /participations/1
@@ -72,5 +73,12 @@ class ParticipationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def participation_params
       params.fetch(:participation, {})
+    end
+
+    def participate
+      @user = current_user
+        if @user.set_participation
+          @participation = Participation.find_by_sql("SELECT * FROM meal WHERE  ORDER BY date")
+        end
     end
 end
