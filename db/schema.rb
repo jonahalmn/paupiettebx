@@ -20,20 +20,24 @@ ActiveRecord::Schema.define(version: 20170329124434) do
     t.string   "pdesc"
     t.string   "dessert"
     t.string   "ddesc"
-    t.datetime "date"
+    t.date     "date"
     t.string   "location"
     t.integer  "nbpart"
     t.integer  "user_id"
-    t.string   "user_fname"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "organisator"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "participations", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "user_fname"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "meal_id"
+    t.string   "meal_name"
+    t.string   "meal_location"
+    t.string   "meal_organisator"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,7 +50,8 @@ ActiveRecord::Schema.define(version: 20170329124434) do
     t.string   "city"
     t.string   "phone"
     t.string   "intersts"
-    t.string   "adress"
+    t.integer  "num"
+    t.string   "street"
     t.text     "description"
     t.boolean  "role"
     t.string   "reset_password_token"
