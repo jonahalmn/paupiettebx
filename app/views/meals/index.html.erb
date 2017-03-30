@@ -6,12 +6,14 @@
   <table class='table panel panel-default' >
     <thead class="panel-heading">
       <tr>
+
         <th>Nom</th>
         <th>Date</th>
         <th>Location</th>
         <th>Nbpart</th>
         <th>User</th>
         <th colspan="3"></th>
+
       </tr>
     </thead>
 
@@ -20,7 +22,7 @@
         <tr>
           <td><%= meal.name %></td>
           <td><%= meal.date %></td>
-          <td><%= @user.adress %></td>
+          <td>Rue<%= @user.street %></td>
           <td><%= meal.nbpart %></td>
           <td><%= @user.fname %></td>
           <td><%= link_to "J'y vais", participations_path(:from => meal.id), method: :create %></td>
