@@ -9,9 +9,15 @@
 </head>
 <body>
   <header>
+    <a href="<%= pages_home_path %>" class="logo-header"><%= image_tag("paupiette-logo.svg", size: "100")%></a>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container container-fluid">
-        <a href="<%= pages_home_path %>" class="navbar-brand"><%= image_tag("paupiette-logo.svg", size: "75")%></a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="navbar-left nav navbar-nav">
             <li><a class="link-paupiette" href="<%= meals_path %>">Déjeuners</a></li>
@@ -39,7 +45,7 @@
               </li>
             </ul>
           </li>
-        </ul>
+        </div>
         <% else %>
         <%= link_to 'Je me connecte', new_user_session_path, :class => "btn btn-default navbar-btn btn-paupiette" %>
         <%= link_to "Je m'inscris", new_user_registration_path, :class => "btn btn-default navbar-btn btn-paupiette" %>
