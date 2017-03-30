@@ -1,5 +1,5 @@
 <section class="header-home">
-  <div class="container medium-container">
+  <div class="container">
     <div class="baseline">
       <div class="baseline-firstline">
         Ce <strong>midi</strong>,
@@ -9,12 +9,12 @@
       </div>
     </div>
   </div>
-  <h2>Plutôt mamie gateau ou jeune prolo ?</H2>
-    <% if !user_signed_in? %>
-    <%= link_to "Je suis chef de cuisine !", new_user_registration_path(:episode => true),  class: "btn btn-default navbar-btn btn-paupiette btn-paupiette-home" %>
-    <%= link_to "Je suis étudiant !", new_user_registration_path(:episode => false), class: "btn btn-default navbar-btn btn-paupiette btn-paupiette-home" %>
-    <% end %>
 </section>
+<h2>Plutôt mamie gateau ou jeune prolo ?</H2>
+  <% if !user_signed_in? %>
+  <%= link_to "Je suis chef de cuisine !", new_user_registration_path(:episode => true),  class: "btn btn-default navbar-btn btn-paupiette btn-paupiette-home" %>
+  <%= link_to "Je suis étudiant !", new_user_registration_path(:episode => false), class: "btn btn-default navbar-btn btn-paupiette btn-paupiette-home" %>
+  <% end %>
 <section class="selfies">
   <div class="container">
   <div class="row">
