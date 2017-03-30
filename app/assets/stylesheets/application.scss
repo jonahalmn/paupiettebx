@@ -39,8 +39,8 @@ body {
   $greyfont: rgba(0, 0, 0, 0.5);
   $pinkwhite: #f7f7f7;
   $black: #494848;
-  $couleur1: #4c256b;
-  $couleur1hover: #341151;
+  $couleur1: #5B1633;
+  $couleur1hover: #4F112D;
   //
 
   // GENERAL
@@ -76,8 +76,12 @@ body {
   }
 
   .btn-paupiette {
-    background-color: $couleur1;
+    background-color: #5B1633;
     color: white;
+    border: none;
+    border-radius: 0px;
+    margin-top: 9px;
+    margin-bottom: 9px;
 
     a {
       color: white;
@@ -90,19 +94,89 @@ body {
   color: white;
   text-decoration: none;
 }
+
+.btn-paupiette-home {
+  padding: 15px 30px;
+  font-size: 1.4em;
+  margin: 0px 5px;
+  font-weight: lighter;
+}
   // BODY HOME
 
+
   section.header-home {
-    background-image: url(/assets/background-home.jpg);
+    background: url( asset-path('background-home.jpg') );
+    background-position: center;
+    background-size: cover;
     background-color: rgba(0, 0, 0, 0.14);
     color: white;
     padding-top: 120px;
-    height: 350px;
+    height: 500px;
     text-align: center;
 }
 
+.selfies {
+    padding: 0px 0px 30px 0px;
 
+    h2 {
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: 0.04em;
+    margin: 15px;
+}
+
+ .col-md-3 {
+   padding:7px;
+}
+
+  .selfie1 {
+    background: url( asset-path('selfie1.jpg') );
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 200px;
+  }
+
+  .selfie2 {
+    background: url( asset-path('selfie2.JPG') );
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 200px;
+  }
+}
   //HEADER
+
+  nav.navbar.navbar-default.navbar-fixed-top {
+    height: 50px;
+}
+
+.navbar-brand {
+    padding: 2px 15px;
+}
+.baseline {
+    font-size: 2.5em;
+    font-weight: lighter;
+}
+
+.baseline-firstline {
+    text-align: left;
+    display: block;
+}
+
+.baseline-secondline {
+    text-align: right;
+}
+
+.baseline-secondline strong {
+    font-family: $font2;
+    color: white;
+    font-size: 1.6em;
+}
+
+.medium-container {
+    max-width: 530px;
+}
 
   //FOOTER
   .navbar-default {

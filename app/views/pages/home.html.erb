@@ -1,5 +1,36 @@
 <section class="header-home">
-  <h1>Paupiette</h1>
-    <%= link_to "Je suis un Paul", new_user_registration_path(:episode => false),  class: "btn btn-default navbar-btn btn-paupiette" %>
-    <%= link_to "Je suis une Paulette", new_user_registration_path(:episode => true), class: "btn btn-default navbar-btn btn-paupiette" %>
+  <div class="container medium-container">
+    <div class="baseline">
+      <div class="baseline-firstline">
+        Ce <strong>midi</strong>,
+      </div>
+      <div class="baseline-secondline">
+        c'est chez <strong>Mamie</strong> !
+      </div>
+    </div>
+  </div>
+  <h2>Plutôt mamie gateau ou jeune prolo ?</H2>
+    <%= link_to "Je suis chef de cuisine !", new_user_registration_path(:episode => false),  class: "btn btn-default navbar-btn btn-paupiette btn-paupiette-home" %>
+    <%= link_to "Je suis étudiant !", new_user_registration_path(:episode => true), class: "btn btn-default navbar-btn btn-paupiette btn-paupiette-home" %>
+</section>
+<section class="selfies">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-12"><h2>Les derniers selfies du midi</h2></div>
+  </div>
+  <div class="row">
+    <div class="col-md-3"><div class="inner-col-md-3 selfie1">
+
+    </div></div>
+    <div class="col-md-3"><div class="inner-col-md-3 selfie2">
+
+    </div></div>
+    <div class="col-md-3"><div class="inner-col-md-3 selfie1">
+
+    </div></div>
+    <div class="col-md-3"><div class="inner-col-md-3 selfie2">
+
+    </div></div>
+  </div>
+  </div>
 </section>
