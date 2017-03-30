@@ -79,14 +79,14 @@
           <%= f.hidden_field :user_id, :value => current_user.id  %>
 
           <div class="actions">
-            <%= f.submit %>
+            <%= f.submit "Ajouter repas"%>
           </div>
         </div>
     </div>
 <% end %>
 <%end%>
 <% else %>
-<p> Vous devez rentrer votre adresse avant de créer un repas </p>
+<h2> Vous devez rentrer votre adresse avant de créer un repas </h2>
 <button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to 'Editer mon profil', edit_user_registration_path %></button>
 <%end%>
 </div>

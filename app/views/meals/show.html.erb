@@ -1,25 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Date:</strong>
-  <%= @meal.date %>
+  <strong>Repas le <%= @meal.date.to_formatted_s(:short) %> chez <%= @meal.user.first_name %></strong>
+</p>
+
+
+<p>Venez manger ... </p>
+
+<p>
+  <strong>Entrée</strong>
+  <%= @meal.entree %>
 </p>
 
 <p>
-  <strong>Rue:</strong>
-  <%= @meal.user.street %>
+  <strong>Plat</strong>
+  <%= @meal.plat %>
 </p>
 
 <p>
-  <strong>Nbpart:</strong>
-  <%= @meal.nbpart %>
+  <strong>Dessert</strong>
+  <%= @meal.dessert %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @meal.user %>
-  <%= @meal.user.first_name %>&nbsp;<%= @meal.user.name %>
-</p>
+<% if current_user == true %>
+  <%= link_to 'Modifier', edit_meal_path(@meal) %>
+<% end %>
 
-<%= link_to 'Edit', edit_meal_path(@meal) %>
-<%= link_to 'Back', meals_path %>
+<%= link_to 'Retour', meals_path %>
