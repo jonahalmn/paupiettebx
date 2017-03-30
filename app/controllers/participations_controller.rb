@@ -44,7 +44,7 @@ class ParticipationsController < ApplicationController
 
 
       if @participation.save
-        redirect_to @participation, notice: 'Participation was successfully created.'
+        redirect_to @participation, notice: 'Votre participation a bien été prise en compte.'
         else
         render :index
 
@@ -71,7 +71,7 @@ class ParticipationsController < ApplicationController
   def destroy
     @participation.destroy
     respond_to do |format|
-      format.html { redirect_to dashboard_path, notice: 'Participation was successfully destroyed.' }
+      format.html { redirect_to dashboard_path, notice: 'Vous ne participez plus à ce repas.' }
       format.json { head :no_content }
     end
   end
