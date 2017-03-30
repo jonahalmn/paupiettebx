@@ -13,7 +13,8 @@ class CreateMeals < ActiveRecord::Migration[5.0]
       t.integer :nbpart
       t.integer :user_id
       t.string :organisator
-       
+      t.string :user_fname
+
 
       t.timestamps
     end
