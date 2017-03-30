@@ -33,10 +33,15 @@ class ParticipationsController < ApplicationController
   # POST /participations
   # POST /participations.json
   def create
+    # @participation = Participation.new(participation_params)
+
+
     @meal = Meal.find(params[:from])
     @user = current_user
     @participation = Participation.new(user_id: @user.id, user_fname: @user.fname, meal_name: @meal.name, meal_location: @meal.location, meal_id: @meal.id)
     @participation.save!
+
+
 
       if @participation.save
         redirect_to @participation, notice: 'Participation was successfully created.'
@@ -80,6 +85,9 @@ class ParticipationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def participation_params
       params.fetch(:participation, {})
+
+      # params.require(:participation).permit(:meal_id, :user_id)
+
     end
 
     def participate
