@@ -107,15 +107,32 @@ body {
   font-weight: lighter;
 }
 
+
 .logo-header {
     position: fixed;
     z-index: 2000;
     transform: translateX(-50%);
     margin-left: 50vw;
     padding: 5px;
-    width:110px;
+    width: 100%;
+    transition: all .4s ease;
+    text-align: center;
 }
-  // BODY HOME
+
+.scrolldown .logo-header {
+    /* width: 60px; */
+    margin-top: -20px;
+    transition: all .4s ease;
+}
+
+header img {
+    transition: all .4s ease;
+}
+
+header.scrolldown img {
+    transition: all .4s ease;
+    width: 60px;
+}  // BODY HOME
 
 
   section.header-home {
