@@ -1,8 +1,21 @@
 <div class="container">
-<h1><%= @user.email %></h1>
-<p>Find me in app/views/users/show.html.erb</p>
-Je suis : <%= @user.role%>
-<br><br><br><br>
-<button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to 'Editer mon profil', edit_user_registration_path %></button>
+<h1>Mon profil</h1>
 
+<p>Prénom : <%= @user.fname%></p>
+<p>Nom : <%= @user.name%></p>
+<p>Je suis un : <%= @user.role%></p>
+<p>Adresse mail : <%= @user.email%></p>
+<p>Ville : <%= @user.city%></p>
+<p>Date de naissance : <%= @user.fname%></p>
+<p>Genre : <%= @user.gender%></p>
+<p>Description : <%= @user.description%></p>
+<p>Intérêts : <%= @user.intersts%></p>
+
+
+
+<br><br><br><br><br>
+
+<% if current_user.id == @user.id %>
+  <button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to 'Editer mon profil', edit_user_registration_path %></button>
+<% end %>
 </div>
