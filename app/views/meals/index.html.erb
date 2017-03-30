@@ -1,4 +1,7 @@
 <% if user_signed_in?%>
+<% if Meal.count == 0%>
+<p>Il n'y a pas de repas crée</p>
+<% else %>
 <p id="notice"><%= notice %></p>
 <div class="container">
   <h1><%= @title %></h1>
@@ -151,6 +154,6 @@
       <% end %>
     </tbody>
   </table>
-
+<% end %>
 <% end %>
 </div>
