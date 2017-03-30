@@ -26,6 +26,7 @@
           <td><%= meal.user.street %></td>
           <td><%= meal.nbpart %></td>
           <td><%= meal.user.first_name %></td>
+          <td><%= Participation.where(:meal_id => meal.id).count %></td>
           <td><%= link_to 'voir sur maps', "http://maps.google.com/?q="+meal.user.street, :target => "_blank" %></td>
 
           <% if !Participation.where(:user_id => @user.id, :meal_id => meal.id).exists? %>
