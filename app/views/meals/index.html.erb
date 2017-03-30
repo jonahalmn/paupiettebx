@@ -21,6 +21,9 @@
     <tbody class="panel-body">
 
       <% @meals.each do |meal| %>
+      <% if (meal.nbpart - (Participation.where(:meal_id => meal.id).count)) == 0 %>
+        <% meal.destroy %>
+      <% end %>
         <tr>
           <td><%= meal.name %></td>
           <td><%= meal.date.to_formatted_s(:short) %></td>
