@@ -30,36 +30,50 @@
           </div>
         <% end %>
       <div class="col-xs-6 col-md-8">
-        <div class="col-md-6 col-md-4">
-          <div class="field">
-            <%= f.label :Nom %>
-            <%= f.text_field :name, :class => 'form-control'  %>
-          </div>
+        <div class="center_signup_bloc">
+          <div class="col-md-6 col-md-4">
+            <div class="sign_up_bloc">
+              <div class="field">
+                <%= f.label :Nom %>
+                <%= f.text_field :name, :class => 'form-control'  %>
+              </div>
 
-          <div class="field">
-            <%= f.label :date %>
-            <%= f.date_select :date %>
-          </div>
+              <div class="field">
+                <%= f.label :date %>
+                <%= f.date_select :date %>
+              </div>
 
-          <div class="field">
-            <%= f.label :participants %>
-            <%= f.select(:nbpart, 1...5) %>
+              <div class="field">
+                <%= f.label :participants %>
+                <%= f.select(:nbpart, 1...5) %>
+              </div>
+              <div class="field">
+                <%= f.label :Ville %>
+                <select name="city" id="post_cities">
+                    <option value="">Bordeaux</option>
+                    <option value="joke">Paris</option>
+                    <option value="poem">Quimper</option>
+                </select>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="col-md-6 col-md-4">
-          <div class="field">
-            <%= f.label :Entrée %>
-            <%= f.text_field :entree, :class => 'form-control'  %>
-          </div>
+          <div class="col-md-6 col-md-4">
+            <div class="sign_up_bloc">
+              <div class="field">
+                <%= f.label :Entrée %>
+                <%= f.text_field :entree, :class => 'form-control'  %>
+              </div>
 
-          <div class="field">
-            <%= f.label :Plat %>
-            <%= f.text_field :plat, :class => 'form-control'  %>
-          </div>
+              <div class="field">
+                <%= f.label :Plat %>
+                <%= f.text_field :plat, :class => 'form-control'  %>
+              </div>
 
-          <div class="field">
-            <%= f.label :Dessert %>
-            <%= f.text_field :dessert, :class => 'form-control'  %>
+              <div class="field">
+                <%= f.label :Dessert %>
+                <%= f.text_field :dessert, :class => 'form-control'  %>
+              </div>
+            </div>
           </div>
 
           <%= f.hidden_field :user_id, :value => current_user.id  %>
@@ -68,12 +82,11 @@
             <%= f.submit %>
           </div>
         </div>
-
     </div>
-  </div>
 <% end %>
 <%end%>
 <% else %>
 <p> Vous devez rentrer votre adresse avant de créer un repas </p>
 <button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to 'Editer mon profil', edit_user_registration_path %></button>
 <%end%>
+</div>

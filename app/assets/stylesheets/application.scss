@@ -184,11 +184,80 @@ header.scrolldown img {
 
 
   //BODY ANNONCES EN PLACE
-  .field{
-    border:1px solid silver;
+  .background_announces{
+    color: white;
+    height: 500px;
   }
 
+  .center_signup_bloc{
+  background-color: rgba(240, 240, 240, 0.9);
+  width: 100%;
+  height: 300px;
+  margin-top: 60px;
 
+  .actions{
+    text-align: center;
+    input{
+      text-align: center;
+      background-color: #4F112D;
+      border: 1px solid #4F112D;
+      width: 100px;
+      margin: 0 auto;
+      color: white;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: bold;
+      -webkit-transition: all O.3 ease-in-out;
+        -moz-transition: all O.3 ease-in-out;
+         -ms-transition: all O.3 ease-in-out;
+          -o-transition: all O.3 ease-in-out;
+             transition: all O.3 ease-in-out;
+    }
+    input:hover{
+      opacity:0.8;
+    }
+  }
+}
+
+  .sign_up_bloc{
+  width:100%;
+  height:240px;
+  //  background-color:blue;
+
+  select{
+    border: 1px solid #B2B5B6;
+    font-size: 14px;
+    background-color: rgba(240,240,240, 0.9);
+    color:grey;
+  }
+
+  p {
+  margin: 0 0 10px;
+  }
+
+  label{
+    color:#833974;
+    font-size:14px;
+    text-align:left;
+    padding: 5px 0px 5px 0px;
+  }
+}
+
+.announce_title{
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: -20px;
+  width: 300px;
+  background-color: #f0f0f0;
+  height: 50px;
+  color: #A0A0A0;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 265px;
+  margin-top: 20px;
+  vertical-align: middle;
+}
 
 
   //HEADER
