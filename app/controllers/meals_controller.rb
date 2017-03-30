@@ -6,7 +6,7 @@ class MealsController < ApplicationController
   def index
     @meals = Meal.all
     @user = current_user
-
+    @part = Participation.where(:user_id => @user.id)
 
   end
 

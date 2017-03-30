@@ -1,7 +1,7 @@
 <div class="small-container">
 <h1>Inscription</h1>
 
-<%= @group = params[:episode] %>
+<% @group = params[:episode] %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>

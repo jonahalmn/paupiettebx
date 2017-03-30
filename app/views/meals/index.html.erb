@@ -25,7 +25,9 @@
           <td>Rue<%= @user.street %></td>
           <td><%= meal.nbpart %></td>
           <td><%= @user.fname %></td>
+          <% if !Participation.where(:user_id => @user.id, :meal_id => meal.id).exists? %>
           <td><%= link_to "J'y vais", participations_path(:from => meal.id), method: :create %></td>
+          <% end %>
           <td><%= link_to 'Show', meal %></td>
           <td><%= link_to 'Edit', edit_meal_path(meal) %></td>
           <td><%= link_to 'Destroy', meal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
