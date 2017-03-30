@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Participations</h1>
+<h1>Les repas auxquels je participe</h1>
 
 <table>
   <thead>
@@ -17,7 +17,7 @@
         <td><%= participation.user_fname %></td>
         <td><%= participation.meal_name %></td>
         <td><%= link_to 'Voir repas', @current_meal %></td>
-        <td><%= link_to 'Destroy', participation, method: :delete, data: { confirm: 'Êtes-vous sûr ?' } %></td>
+        <td><%= link_to 'Ne plus participer', participation, method: :delete, data: { confirm: 'Êtes-vous sûr ?' } %></td>
       </tr>
     <% end %>
   </tbody>

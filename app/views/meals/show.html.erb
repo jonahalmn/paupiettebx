@@ -22,7 +22,7 @@
   <%= @meal.dessert %>
 </p>
 
-<% if current_user == true %>
+<% if current_user == true && @user.id == meal.user.id %>
   <%= link_to 'Modifier', edit_meal_path(@meal) %>
 <% end %>
 

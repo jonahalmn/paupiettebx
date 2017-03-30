@@ -24,7 +24,7 @@ class ParticipationsController < ApplicationController
 
   def me
     @user = current_user
-  #  @participation = Participation.find_by_sql("SELECT * FROM meal WHERE user_id = '"+@user.id+"' ORDER BY date")
+  # @participation = Participation.find_by_sql("SELECT * FROM meal WHERE user_id = '"+@user.id+"' ORDER BY date")
    @participations = Participation.where(:user_id => @user.id)
    render :me
   end
