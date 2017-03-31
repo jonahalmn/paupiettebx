@@ -425,10 +425,10 @@ header.scrolldown img {
 }
 
 .baseline {
-    font-size: 2.5em !important;
+    font-size: 2.5em ;
     font-weight: lighter;
-    max-width: 500px !important;
-    width: 100% !important;
+    max-width: 500px ;
+    width: 100% ;
     margin: 0 auto;
     color: black;
 }
@@ -784,10 +784,6 @@ body .inner-container-left {
     margin: 0 auto;
 }
 
-.baseline {
-    font-size: 2.5em;
-}
-
 .selfie-container {
     width: 50% !important;
     padding: 5px;
@@ -796,7 +792,7 @@ body .inner-container-left {
 
 @media screen and (max-width: 420px) {
   .baseline {
-      font-size: 2em !important;
+      font-size: 2em!important;
   }
 
   .baseline h2 {
@@ -895,3 +891,8 @@ body {
       }
     }
   }
+
+  .baseline {
+      font-size: 2em!important;
+  }
+}
