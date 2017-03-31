@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Paupiette</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -31,7 +32,7 @@
         </ul>
         <ul class="onglet-right">
           <% if user_signed_in? %>
-          <li id="deroul" class="menu-li deroul closed">Paul</li>
+          <li id="deroul" class="menu-li deroul closed">Paul <span class="glyphicon glyphicon-user" aria-hidden="true"></span></li>
           <ul id="deroul-menu" class="deroul-menu closed">
             <li><%= link_to 'Mon compte', user_path(current_user) %></li>
             <% if current_user.role == false %>
