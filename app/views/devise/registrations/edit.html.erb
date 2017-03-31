@@ -1,28 +1,29 @@
-<div class="small-container">
+  <div class="paupiette-container">
+    <div class="padding-page-demi">
 <h2>Modification du profil </h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
-
+    <div class="paupiette-demi paupiette-first">
 
   <div class="field">
     <%= f.label :Nom %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class => 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Prénom %>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, :class => 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Email %>
-    <%= f.text_field :email, autofocus: true %>
+    <%= f.text_field :email, autofocus: true, :class => 'form-control' %>
   </div>
 
   <div class="field">
-    <%= f.label "Mot de passe" %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.label "Mot de passe" %> <i>(laissez le champs vide si vous ne souhaitez pas le changer)</i><br />
+    <%= f.password_field :password, autocomplete: "off", :class => 'form-control' %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
@@ -31,7 +32,7 @@
 
   <div class="field">
     <%= f.label "Confirmation" %>
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control' %>
   </div>
 
   <div class="field">
@@ -43,46 +44,49 @@
     <%= f.label "Date de naissance" %><br />
     <%= f.date_field :dateofbirth %>
   </div>
-
+</div>
+<div class="paupiette-demi paupiette-second">
   <div class="field">
     <%= f.label :Rue %><br />
-    <%= f.text_field :street %>
+    <%= f.text_field :street, :class => 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label "Numéro de rue" %><br />
-    <%= f.text_field :street_number %>
+    <%= f.text_field :street_number, :class => 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label "Code Postal" %><br />
-    <%= f.text_field :zip_code %>
+    <%= f.text_field :zip_code, :class => 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Ville %><br />
-    <%= f.text_field :city %>
+    <%= f.text_field :city, :class => 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Téléphone %><br />
-    <%= f.text_field :phone %>
+    <%= f.text_field :phone, :class => 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Description %><br />
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :class => 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Intérêts %><br />
-    <%= f.text_field :interests %>
+    <%= f.text_field :interests, :class => 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label "Vous êtes ?" %><br />
     <%= f.collection_radio_buttons :role, [[true, 'Marmiton'] ,[false, 'Etudiant']], :first, :last %>
   </div>
+</div>
+<div class="after-demi">
 
 
   <div class="actions">
@@ -90,9 +94,12 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3>Supprimer mon compte</h3>
 
 <p><%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Êtes-vous sûr ?" }, method: :delete %></p>
 
 <%= link_to "Retour", :back %>
+</div>
+</div>
+</div>
 </div>

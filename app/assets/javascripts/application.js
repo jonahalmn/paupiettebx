@@ -34,3 +34,34 @@ window.addEventListener("scroll", function(){ // or window.addEventListener("scr
 } else {
 }
 }, false);
+
+
+document.getElementById('menu-burger').addEventListener('click', function () {
+  // Using an if statement to check the class
+  if (document.body.classList.contains('menu-burger-closed')) {
+    // The box that we clicked has a class of bad so let's remove it and add the good class
+   document.body.classList.add('menu-burger-open');
+   document.body.classList.remove('menu-burger-closed');
+ } else if (document.body.classList.contains('menu-burger-open')) {
+    // The box that we clicked has a class of bad so let's remove it and add the good class
+    document.body.classList.remove('menu-burger-open');
+   document.getElementById('body').classList.add('menu-burger-closed');
+  }
+});
+
+
+document.getElementById('deroul').addEventListener('click', function () {
+  // Using an if statement to check the class
+  if (document.getElementById('deroul-menu').classList.contains('closed')) {
+    // The box that we clicked has a class of bad so let's remove it and add the good class
+   document.getElementById('deroul').classList.add('open');
+   document.getElementById('deroul').classList.remove('closed');
+	 document.getElementById('deroul-menu').classList.add('open');
+   document.getElementById('deroul-menu').classList.remove('closed');
+ } else if (document.getElementById('deroul').classList.contains('open')) {
+		document.getElementById('deroul').classList.remove('open');
+    document.getElementById('deroul').classList.add('closed');
+ 	 	document.getElementById('deroul-menu').classList.remove('open');
+    document.getElementById('deroul-menu').classList.add('closed');
+  }
+});

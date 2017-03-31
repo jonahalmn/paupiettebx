@@ -44,7 +44,7 @@ class ParticipationsController < ApplicationController
 
 
       if @participation.save
-        redirect_to @participation, notice: 'Votre participation a bien été prise en compte.'
+        redirect_to dashboard_path, notice: 'Votre participation a bien été prise en compte.'
         else
         render :index
 

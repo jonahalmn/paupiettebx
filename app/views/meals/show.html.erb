@@ -22,6 +22,13 @@
   <%= @meal.dessert %>
 </p>
 
+
+<% if current_user.role == true && current_user.id == @meal.user.id %>
+  <% @meals.each do |meal| %>
+  <%= meal.user.first_name %>
+<% end %>
+<% end %>
+
 <% if current_user == true && @user.id == meal.user.id %>
   <%= link_to 'Modifier', edit_meal_path(@meal) %>
 <% end %>

@@ -15,8 +15,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.integer :num
       t.string :street
       t.text :description
-      t.boolean :role
-      
+      t.boolean :role               
+
 
 
       ## Recoverable
