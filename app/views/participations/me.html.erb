@@ -18,7 +18,7 @@
               <td class= "col-md-4"><%= link_to href:@current_meal do %><%=image_tag ("meal-image.jpg"), class: "dash-meal-image"%><%end%></td>
               <td class= "dash-meal-text col-md-7"><span class="dash-meal-name"><%= participation.meal_name %></span>, chez <%= participation.user_fname%> <br><%= participation.meal_location %>
               <%= link_to 'Voir repas', @current_meal %></td>
-              <!--<td><%= link_to 'Carte', "http://maps.google.com/?q="+@current_meal.user.street, :target => "_blank"  %></td>-->
+              <%= link_to 'Carte', "http://maps.google.com/?q="+@current_meal.user.street, :target => "_blank"  %></td>
 
               <td class="col-md-1"><%= link_to '', participation, method: :delete, data: { confirm: 'Are you sure?' }, :class => "glyphicon glyphicon-trash"%></td>
             </tr>
