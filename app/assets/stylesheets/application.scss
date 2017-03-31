@@ -23,6 +23,14 @@
   font-style: normal;
 }
 
+@font-face {
+    font-family: 'please_write_me_a_songmedium';
+    src: url('font-bof-webfont.woff2') format('woff2'),
+         url('font-bof-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
 
   background-color: rgba(91, 22, 51, 0.01);
@@ -91,9 +99,9 @@ body {
 }
 
 .prix .paupiette-container .inner-container {
-    background-color: #72b28b;
+    background-color: rgba(84, 173, 118, 0.41);
     margin: 0.5%;
-    padding:50px 25px;
+    padding: 50px 25px;
 }
 
 .prix-img {
@@ -104,7 +112,48 @@ body {
     max-width: 100%;
 }
 
+.col2 {
+    font-family: 'please_write_me_a_songmedium';
+    font-size: 2em;
+    vertical-align: middle;
+}
 
+table img {
+    width: 220px;
+}
+
+.infog table {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.infog h2 {
+    font-family: "playlistscript";
+    font-size: 60px;
+    text-align: center;
+}
+
+.infog h3 {
+    font-family: "playlistscript";
+    text-align: right;
+    font-size: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.col1.fleche img {
+    float: right;
+    margin-right: 30px;
+}
+
+section.infog {
+    margin-bottom: 50px;
+}
+
+.fleche img {
+    width: 100px;
+    padding-top: 50%;
+}
 
 section.prix {
     margin-bottom: 50px;
@@ -123,6 +172,13 @@ section.prix {
 .pilier-container {
     width: 33.333%;
     padding: 5px;
+}
+
+.infog .paupiette-container .inner-container {
+    background-color: #303030;
+    margin: 0.5%;
+    padding: 50px 25px;
+    color: white;
 }
 
 .paupiette-demi {
@@ -523,14 +579,14 @@ section.selfies-du-midi {
 }
 
 td.table-prix {
-    font-size: 70px;
+    font-size: 50px;
     font-family: "playlistscript";
     width: 30%;
     text-align: center;
 }
 
 td.table-plat {
-    font-size: 20px;
+    font-size: 25px;
 }
 
   //BODY ANNONCES EN PLACE
