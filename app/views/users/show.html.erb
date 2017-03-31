@@ -15,13 +15,23 @@
 
 <p>Prénom : <%= @user.first_name%></p>
 <p>Nom : <%= @user.name%></p>
-<p>Je suis un : <%= @user.role%></p>
+<p>Statut : <%= @role %></p>
 <p>Adresse mail : <%= @user.email%></p>
+<% if !@user.city.nil? %>
 <p>Ville : <%= @user.city%></p>
+<%end%>
+<% if !@user.dateofbirth.nil? %>
 <p>Date de naissance : <%= @user.dateofbirth%></p>
+<%end%>
+<% if !@user.gender.nil? %>
 <p>Civilité : <%= @user.gender%></p>
+<%end%>
+<% if !@user.description.nil? %>
 <p>Description : <%= @user.description%></p>
+<%end%>
+<% if !@user.interests.nil? %>
 <p>Intérêts : <%= @user.interests%></p>
+<%end%>
 
 
 
