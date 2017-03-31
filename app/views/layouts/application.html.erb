@@ -5,57 +5,49 @@
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
-<body>
+<body id="body" class="menu-burger-closed">
   <header id="header">
-    <a href="<%= pages_home_path %>" class="logo-header"><%= image_tag("paupiette-logo.svg", size: "100")%></a>
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container container-fluid">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="navbar-left nav navbar-nav">
-            <li><a class="link-paupiette" href="<%= meals_path %>">Déjeuners</a></li>
-            <li><a class="link-paupiette" href="<%= pages_contact_path %>">Contact</a></li>
-              <% if user_signed_in? %>
-                <% if current_user.role == true %>
-                  <li><button type="button" class="btn btn-default navbar-btn btn-paupiette"><%= link_to 'Nouveau repas', new_meal_path %></button></li>
-                <%end%>
-              <%end%>
-            </li>
+    <nav class="menu-header">
+      <a href="" class="menu-logo">
+        <%= image_tag("paupiette-logo.svg")%>
+      </a>
+      <div class="menu-burger" id="menu-burger">
+  <div class="icon-bars">
+  <div class="icon-bar"></div>
+  <div class="icon-bar"></div>
+  <div class="icon-bar"></div>
+  </div>
+  </div>
+      <div class="paupiette-container">
+        <ul class="onglet-left">
+          <li class="menu-li"><a href="<%= meals_path %>">Déjeuners</a></li>
+          <li class="menu-li"><a href="<%= pages_contact_path %>">Contact</a></li>
+          <% if user_signed_in? %>
+            <% if current_user.role == true %>
+              <li class="btn-paupiette"><%= link_to 'Nouveau repas', new_meal_path %></li>
+            <%end%>
+          <%end%>
+        </ul>
+        <ul class="onglet-right">
+          <% if user_signed_in? %>
+          <li id="deroul" class="menu-li deroul closed">Paul</li>
+          <ul id="deroul-menu" class="deroul-menu closed">
+            <li><%= link_to 'Mon compte', user_path(current_user) %></li>
+            <% if current_user.role == false %>
+            <li><%= link_to 'Mon tableau de bord', dashboard_path %></li>
+            <%else%>
+            <li><%= link_to 'Mon tableau de bord', me_meals_path %></li>
+            <%end%>
+            <li><%= link_to "Me déconnecter", signout_path %></li>
           </ul>
-          <div class="nav navbar-nav navbar-right">
-            <% if user_signed_in? %>
-            <ul class="nav navbar-nav">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.first_name %><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
-                <ul class="dropdown-menu">
-                  <li><%= link_to 'Mon compte', user_path(current_user) %></li>
-                  <% if current_user.role == false %>
-                    <li><%= link_to 'Mon tableau de bord', dashboard_path %></button></li>
-                    <%else%>
-                    <li><%= link_to 'Mon tableau de bord', me_meals_path %></button></li>
-                    <%end%>
-                  <li role="separator" class="divider"></li>
-                  <li><%= link_to "Me déconnecter", signout_path %></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </div>
-        <% else %>
-        <%= link_to 'Je me connecte', new_user_session_path, :class => "btn btn-default navbar-btn btn-paupiette" %>
-        <%= link_to "Je m'inscris", new_user_registration_path, :class => "btn btn-default navbar-btn btn-paupiette" %>
+      <% else %>
+          <li class="btn-paupiette"><%= link_to 'Je me connecte', new_user_session_path%></li>
+          <li class="btn-paupiette"><%= link_to "Je m'inscris", new_user_registration_path%></li>
         <% end %>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+        </ul>
+      </div>
+    </nav>
   </header>
     <div class="content">
       <%= yield %>
@@ -122,6 +114,7 @@
               </div>
             </div>
           </div>
+          <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
         </footer>
       </body>
       </html>
