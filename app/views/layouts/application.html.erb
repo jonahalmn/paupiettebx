@@ -23,7 +23,7 @@
       <div class="paupiette-container">
         <ul class="onglet-left">
           <li class="menu-li"><a href="<%= meals_path %>">Annonces</a></li>
-          <li class="menu-li"><a href="<%= pages_contact_path %>">Contact</a></li>
+          <li class="menu-li"><a href="<%= contacts_path %>">Contact</a></li>
           <% if user_signed_in? %>
             <% if current_user.role == true %>
               <li class="btn-paupiette"><%= link_to 'Nouveau repas', new_meal_path %></li>
