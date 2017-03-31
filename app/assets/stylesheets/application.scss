@@ -775,7 +775,6 @@ td.table-plat {
   }
 }
 
-
 @media screen and (max-width: 800px) {
   body .pilier-container {
     width: 100%;
@@ -884,9 +883,76 @@ a.action-btn-home {
       font-family: "playlistscript";
       font-size: 2em;
       padding: 0px 40px;
+    }
   }
 
+//MODIF DASHBOARD
+
+body {
+    .dash-body {
+      margin: 150px auto;
+      width: 80vw;
+
+      .dash-profile {
+        text-align: center;
+        color: #494848;
+        font-size: 24px;
+
+        .dash-profile-edit {
+          font-size: 20px;
+        }
+
+        .dash-profile-image{
+          height: 150px;
+          margin-top: 250px;
+          margin-bottom: 20px;
+        }
+      }
+
+      .dash-section {
+        h1 {
+          color: #5B1633;
+          text-align: center;
+          margin: 0 0 20px 0;
+          text-transform: uppercase;
+        }
+
+        tr {
+          height: 120px;
+          border-top: solid #FDFCFC 50px;
+
+          td:nth-child(1){
+            padding-right: 0;
+          }
+
+          td:nth-child(3){
+            background-color: white;
+          }
+
+          td {
+            background-color: #FDFCFC;
+          }
+
+          .dash-meal-image {
+            float: right;
+            width: 200px;
+            height: 120px;
+          }
+
+          .dash-meal-text {
+            color: #5B1633;
+            background-color: white;
+
+            .dash-meal-name {
+              text-transform: uppercase;
+              font-weight: bold;
+            }
+
+          }
+        }
+      }
+    }
+  }
   .baseline {
       font-size: 2em!important;
   }
-}

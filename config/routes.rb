@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
   get 'pages/dashboard'
 
+  match '/contacts',     to: 'contacts#new',             via: 'get'
+resources "contacts", only: [:new, :create]
+
   post 'participation/new' => 'participations#create'
   resources :pages
   devise_for :users, :controllers => { registrations: "registrations" }

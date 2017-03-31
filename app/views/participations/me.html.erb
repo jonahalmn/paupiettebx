@@ -1,32 +1,30 @@
 
-<h1>Vos Participations</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nom de l'organisateur</th>
-      <th>Nom du repas</th>
-      <th>Lieu</th>
-      <th>Menu</th>
-      <th colspan="3"></th>
-    </tr>
-
-  </thead>
-
-  <tbody>
-    <% @participations.each do |participation| %>
-
-      <tr>
-      <% @current_meal = Meal.find(participation.meal_id) %>
-        <td><%= @current_meal.user.first_name %></td>
-        <td><%= participation.meal_name %></td>
-        <td><%= @current_meal.user.street_number %> <%= @current_meal.user.street %> <%= @current_meal.user.city %>, <%= @current_meal.user.zip_code %></td>
-        <td> Entrée + Plat + Dessert </td>
-        <td><%= link_to 'Carte', "http://maps.google.com/?q="+@current_meal.user.street, :target => "_blank"  %></td>
-        <td><%= link_to 'Voir repas', @current_meal %></td>
-        <td><%= link_to 'Annuler', participation, method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir annuler votre réservations ?' } %></td>
-      </tr>
-
-    <% end %>
-  </tbody>
-</table>
+<body>
+  <p id="notice"><%= notice %></p>
+  <div class="dash-body container">
+    <div class="dash-profile col-md-2">
+      <%=image_tag ("profile-image.png"), class: "dash-profile-image"%>
+      <br>
+      <%= @user.first_name%> <%= @user.name%>
+      <%= link_to 'Modifier mon profil', edit_user_registration_path, :class => "dash-profile-edit"%>
+    </div>
+    <div class="dash-section col-md-10">
+      <h1>Mes réservations</h1>
+      <table class="col-md-11">
+        <tbody>
+          <% @participations.each do |participation| %>
+            <tr>
+              <% @current_meal = Meal.find(participation.meal_id) %>
+              <td class= "col-md-4"><%= link_to href:@current_meal do %><%=image_tag ("meal-image.jpg"), class: "dash-meal-image"%><%end%></td>
+              <td class= "dash-meal-text col-md-7"><span class="dash-meal-name"><%= participation.meal_name %></span>, chez <%= @current_meal.user.first_name%> <br><%= @current_meal.user.city %>
+              <!--<%= link_to 'Voir repas', @current_meal %>-->
+              <br><%= link_to 'Voir sur la carte', "http://maps.google.com/?q="+@current_meal.user.street, :target => "_blank"  %>
+              </td>
+              <td class="col-md-1"><%= link_to '', participation, method: :delete, data: { confirm: 'Are you sure?' }, :class => "glyphicon glyphicon-trash"%></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>

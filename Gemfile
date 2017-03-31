@@ -64,3 +64,5 @@ gem 'therubyracer'
 gem 'less-rails'
 
 gem 'twitter-bootstrap-rails'
+
+gem "mail_form", ">= 1.3.0"
