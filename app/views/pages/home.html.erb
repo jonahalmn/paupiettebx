@@ -8,8 +8,8 @@
         <div class="baseline-secondline">
           c'est chez <strong>Mamie</strong> !
         </div>
+        <h2>Paupiette réunit séniors et étudiants le temps d’un déjeuner, autour d’un bon petit plat ! <br>Toi aussi, rejoins-nous.</H2>
         <% if !user_signed_in? %>
-          <h2>Paupiette réunit séniors et étudiants le temps d’un déjeuner, autour d’un bon petit plat ! <br>Toi aussi, rejoins-nous.</H2>
               <%= link_to "Je suis chef de cuisine !", new_user_registration_path(:episode => true),  class: "action-btn-home" %>
               <%= link_to "Je suis étudiant !", new_user_registration_path(:episode => false), class: "action-btn-home" %>
         <% end %>
@@ -103,17 +103,20 @@
     <%= image_tag("carotte.png")%>
   </div>
 <h2>Des prix fixes</h2>
-<ul>
-  <li><div class="prix-info">
-    4 €
-  </div>Un Plat</li>
-  <li><div class="prix-info">
-    5 €
-  </div>Un entrée/un plat OU un plat/un dessert</li>
-  <li><div class="prix-info">
-    7 €
-  </div>Une entrée/un plat/un dessert</li>
-</ul>
+<table >
+  <tr>
+    <td class="table-prix">4 €</td>
+    <td class='table-plat'>Un Plat</td>
+  </tr>
+  <tr>
+    <td class="table-prix">5 €</td>
+    <td class='table-plat'>Un entrée/un plat OU un plat/un dessert</td>
+  </tr>
+  <tr>
+    <td class="table-prix">7 €</td>
+    <td class='table-plat'>Une entrée/un plat/un dessert</td>
+  </tr>
+</table>
 </div>
   </div>
 </section>

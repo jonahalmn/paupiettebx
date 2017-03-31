@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
   <strong>Repas le <%= @meal.date.to_formatted_s(:short) %> chez <%= @meal.user.first_name %></strong>
@@ -21,7 +21,6 @@
   <strong>Dessert</strong>
   <%= @meal.dessert %>
 </p>
-
 
 <% if current_user.role == true && current_user.id == @meal.user.id %>
   <% @meals.each do |meal| %>
