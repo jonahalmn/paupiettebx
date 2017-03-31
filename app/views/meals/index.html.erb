@@ -37,8 +37,9 @@
           <td>Entrée + Plat + Dessert </td>
           <% if (meal.nbpart - (Participation.where(:meal_id => meal.id).count)) == 0 %>
           <td>Ce repas est complet</td>
+          <td><%= link_to 'Voir plus', meal %></td>
           <% else %>
-          <% if Participation.where(:user_id => current_user.id).exists? %>
+          <% if Participation.where(:user_id => current_user.id).exists? || current_user.id == meal.user.id%>
           <td><%= link_to 'Carte', "http://maps.google.com/?q="+meal.user.street, :target => "_blank" %></td>
           <%end%>
           <% if current_user.role == false %>
@@ -48,6 +49,7 @@
           <% end %>
           <td><%= link_to 'Voir plus', meal %></td>
           <% if current_user.role == true && current_user.id == meal.user.id %>
+
           <td><%= link_to 'Modifier', edit_meal_path(meal) %></td>
           <td><%= link_to 'Annuler', meal, method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir annuler le repas ?' } %></td>
           <% end %>

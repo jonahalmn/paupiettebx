@@ -3,7 +3,6 @@
   <p id="notice"><%= notice %></p>
   <div class="dash-body container">
     <div class="dash-profile col-md-2">
-      <%=image_tag ("profile-image.png"), class: "dash-profile-image"%>
       <br>
       <%= @user.first_name%> <%= @user.name%>
       <%= link_to 'Modifier mon profil', edit_user_registration_path, :class => "dash-profile-edit"%>
