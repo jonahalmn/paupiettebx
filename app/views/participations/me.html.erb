@@ -20,8 +20,6 @@
               <!--<%= link_to 'Voir repas', @current_meal %>-->
               <br><%= link_to 'Voir sur la carte', "http://maps.google.com/?q="+@current_meal.user.street, :target => "_blank"  %>
               </td>
-
-
               <td class="col-md-1"><%= link_to '', participation, method: :delete, data: { confirm: 'Are you sure?' }, :class => "glyphicon glyphicon-trash"%></td>
             </tr>
           <% end %>

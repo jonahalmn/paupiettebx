@@ -863,10 +863,18 @@ body {
 
         tr {
           height: 120px;
-          border-top: solid white 50px;
+          border-top: solid #FDFCFC 50px;
 
           td:nth-child(1){
             padding-right: 0;
+          }
+
+          td:nth-child(3){
+            background-color: white;
+          }
+
+          td {
+            background-color: #FDFCFC;
           }
 
           .dash-meal-image {
@@ -877,7 +885,7 @@ body {
 
           .dash-meal-text {
             color: #5B1633;
-            background-color: #f7f7f7;
+            background-color: white;
 
             .dash-meal-name {
               text-transform: uppercase;
