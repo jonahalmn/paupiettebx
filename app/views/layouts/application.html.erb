@@ -10,9 +10,9 @@
 <body id="body" class="menu-burger-closed">
   <header id="header">
     <nav class="menu-header">
-      <a href="" class="menu-logo">
-        <%= image_tag("paupiette-logo.svg")%>
-      </a>
+
+        <%= link_to image_tag("paupiette-logo.svg"), pages_home_path, class: "menu-logo"%>
+
       <div class="menu-burger" id="menu-burger">
   <div class="icon-bars">
   <div class="icon-bar"></div>
@@ -32,7 +32,7 @@
         </ul>
         <ul class="onglet-right">
           <% if user_signed_in? %>
-          <li id="deroul" class="menu-li deroul closed">Paul <span class="glyphicon glyphicon-user" aria-hidden="true"></span></li>
+          <li id="deroul" class="menu-li deroul closed"><%= current_user.first_name %> <span class="glyphicon glyphicon-user" aria-hidden="true"></span></li>
           <ul id="deroul-menu" class="deroul-menu closed">
             <li><%= link_to 'Mon compte', user_path(current_user) %></li>
             <% if current_user.role == false %>
