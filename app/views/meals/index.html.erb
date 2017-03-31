@@ -1,28 +1,28 @@
 <% if user_signed_in?%>
-<% if Meal.count == 0%>
-<p>Aucun repas n'est proposé pour le moment, repassez plus tard !</p>
-<% else %>
-<div class="container">
-  <h1><%= @title %></h1>
+  <% if Meal.count == 0%>
+  <p>Aucun repas n'est proposé pour le moment, repassez plus tard !</p>
+  <% else %>
+  <div class="container">
+    <h1><%= @title %></h1>
 
 
-  <table class='table panel panel-default' >
-    <thead class="panel-heading">
+    <table class='table panel panel-default' >
+      <thead class="panel-heading">
 
-    <tr>
-      <th>Nom</th>
-      <th>Date</th>
-      <th>Lieu</th>
-      <th>Places disponibles</th>
-      <th>Organisateur</th>
-      <th>Menu</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <tr>
+          <th>Nom</th>
+          <th>Date</th>
+          <th>Lieu</th>
+          <th>Places disponibles</th>
+          <th>Organisateur</th>
+          <th>Menu</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-    <tbody class="panel-body">
+      <tbody class="panel-body">
 
-      <% @meals.each do |meal| %>
+        <% @meals.each do |meal| %>
 
         <tr>
           <td><%= meal.name %></td>
@@ -36,31 +36,31 @@
           <td><%= meal.user.first_name %></td>
           <td>Entrée + Plat + Dessert </td>
           <% if (meal.nbpart - (Participation.where(:meal_id => meal.id).count)) == 0 %>
-            <td>Ce repas est complet</td>
+          <td>Ce repas est complet</td>
           <% else %>
           <% if Participation.where(:user_id => current_user.id).exists? %>
           <td><%= link_to 'Carte', "http://maps.google.com/?q="+meal.user.street, :target => "_blank" %></td>
           <%end%>
           <% if current_user.role == false %>
-            <% if !Participation.where(:user_id => @user.id, :meal_id => meal.id).exists? %>
+          <% if !Participation.where(:user_id => @user.id, :meal_id => meal.id).exists? %>
           <td><%= link_to "J'y vais", participations_path(:from => meal.id), method: :create %></td>
           <% end %>
-            <% end %>
+          <% end %>
           <td><%= link_to 'Voir plus', meal %></td>
           <% if current_user.role == true && current_user.id == meal.user.id %>
-            <td><%= link_to 'Modifier', edit_meal_path(meal) %></td>
-            <td><%= link_to 'Annuler', meal, method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir annuler le repas ?' } %></td>
+          <td><%= link_to 'Modifier', edit_meal_path(meal) %></td>
+          <td><%= link_to 'Annuler', meal, method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir annuler le repas ?' } %></td>
           <% end %>
         </tr>
-          <% end %>
-      <% end %>
-    </tbody>
-<% if @me == true %>
+        <% end %>
+        <% end %>
+      </tbody>
+      <% if @me == true %>
 
 
-    <tbody class="panel-body">
+      <tbody class="panel-body">
 
-      <% @prev_meals.each do |meal| %>
+        <% @prev_meals.each do |meal| %>
         <tr><td> <p> Passés </p> </td></tr>
         <tr>
           <td><%= meal.name %></td>
@@ -71,27 +71,27 @@
           <td>Entrée + Plat + Dessert </td>
           <td><%= link_to 'Carte', "http://maps.google.com/?q="+meal.user.street, :target => "_blank" %></td>
           <% if current_user.role == false %>
-            <% if !Participation.where(:user_id => @user.id, :meal_id => meal.id).exists? %>
+          <% if !Participation.where(:user_id => @user.id, :meal_id => meal.id).exists? %>
           <td><%= link_to "J'y vais", participations_path(:from => meal.id), method: :create %></td>
           <% end %>
-            <% end %>
+          <% end %>
           <td><%= link_to 'Voir plus', meal %></td>
           <% if current_user.role == true && current_user.id == meal.user.id %>
-            <td><%= link_to 'Modifier', edit_meal_path(meal) %></td>
-            <td><%= link_to 'Annuler', meal, method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir annuler le repas ?' } %></td>
+          <td><%= link_to 'Modifier', edit_meal_path(meal) %></td>
+          <td><%= link_to 'Annuler', meal, method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir annuler le repas ?' } %></td>
           <% end %>
         </tr>
 
-      <% end %>
-      <%end%>
-    </tbody>
+        <% end %>
+        <%end%>
+      </tbody>
 
-<% if @me == true %>
+      <% if @me == true %>
 
 
-    <tbody class="panel-body">
+      <tbody class="panel-body">
 
-      <% @prev_meals.each do |meal| %>
+        <% @prev_meals.each do |meal| %>
         <tr><td> <p> Passés </p> </td></tr>
         <tr>
           <td><%= meal.name %></td>
@@ -102,51 +102,56 @@
           <td>Entrée + Plat + Dessert </td>
           <td><%= link_to 'Carte', "http://maps.google.com/?q="+meal.user.street, :target => "_blank" %></td>
           <% if current_user.role == false %>
-            <% if !Participation.where(:user_id => @user.id, :meal_id => meal.id).exists? %>
+          <% if !Participation.where(:user_id => @user.id, :meal_id => meal.id).exists? %>
           <td><%= link_to "J'y vais", participations_path(:from => meal.id), method: :create %></td>
           <% end %>
-            <% end %>
+          <% end %>
           <td><%= link_to 'Voir plus', meal %></td>
           <% if current_user.role == true && current_user.id == meal.user.id %>
-            <td><%= link_to 'Modifier', edit_meal_path(meal) %></td>
-            <td><%= link_to 'Annuler', meal, method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir annuler le repas ?' } %></td>
+          <td><%= link_to 'Modifier', edit_meal_path(meal) %></td>
+          <td><%= link_to 'Annuler', meal, method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir annuler le repas ?' } %></td>
           <% end %>
         </tr>
 
-      <% end %>
-      <%end%>
-    </tbody>
+        <% end %>
+        <%end%>
+      </tbody>
 
 
-  </table>
+    </table>
 
-  <br>
-  <% if current_user.role == true %>
+    <br>
+    <% if current_user.role == true %>
     <%= link_to 'Nouveau repas', new_meal_path, :class => "btn btn-default btn-paupiette" %>
-  <%end%>
-<% end %>
-</div>
-<% if !user_signed_in? %>
-<div class="container">
-  <h1>Repas</h1>
+    <%end%>
+    <% end %>
+  </div>
 
 
-  <table class='table panel panel-default' >
-    <thead class="panel-heading">
+  <% if !user_signed_in? %>
+  <% if Meal.count == 0%>
+  <p>Aucun repas n'est proposé pour le moment, repassez plus tard !</p>
+  <% else %>
+  <div class="container">
+    <h1>Repas</h1>
 
-    <tr>
-      <th>Nom</th>
-      <th>Date</th>
-      <th>Lieu</th>
-      <th>Nombre de participant</th>
-      <th>Organisateur</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-    <tbody class="panel-body">
+    <table class='table panel panel-default' >
+      <thead class="panel-heading">
 
-      <% @meals.each do |meal| %>
+        <tr>
+          <th>Nom</th>
+          <th>Date</th>
+          <th>Lieu</th>
+          <th>Nombre de participant</th>
+          <th>Organisateur</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody class="panel-body">
+
+        <% @meals.each do |meal| %>
         <tr>
           <td><%= meal.name %></td>
           <td><%= meal.date %></td>
@@ -154,9 +159,10 @@
           <td><%= meal.nbpart %></td>
           <td><%= meal.user.fname %></td>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
-<% end %>
-</div>
+        <% end %>
+      </tbody>
+    </table>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
