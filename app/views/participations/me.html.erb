@@ -4,6 +4,10 @@
 <table>
   <thead>
     <tr>
+      <th>Nom de l'organisateur</th>
+      <th>Nom du repas</th>
+      <th>Lieu</th>
+      <th>Menu</th>
       <th colspan="3"></th>
     </tr>
 
@@ -14,8 +18,10 @@
 
       <tr>
       <% @current_meal = Meal.find(participation.meal_id) %>
-        <td><%= participation.user_fname %></td>
+        <td><%= @current_meal.user.first_name %></td>
         <td><%= participation.meal_name %></td>
+        <td><%= @current_meal.user.street_number %> <%= @current_meal.user.street %> <%= @current_meal.user.city %>, <%= @current_meal.user.zip_code %></td>
+        <td> Entrée + Plat + Dessert </td>
         <td><%= link_to 'Carte', "http://maps.google.com/?q="+@current_meal.user.street, :target => "_blank"  %></td>
         <td><%= link_to 'Voir repas', @current_meal %></td>
         <td><%= link_to 'Annuler', participation, method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir annuler votre réservations ?' } %></td>

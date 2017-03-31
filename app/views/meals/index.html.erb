@@ -27,14 +27,20 @@
         <tr>
           <td><%= meal.name %></td>
           <td><%= meal.date.strftime "%d %b" %></td>
-          <td><%= meal.user.street %></td>
+          <% if Participation.where(:user_id => current_user.id).exists? %>
+          <td><%= meal.user.street_number %> <%= meal.user.street %> <%= meal.user.city %>, <%= meal.user.zip_code %></td>
+          <%else%>
+          <td></td>
+          <%end%>
           <td><%= meal.nbpart - (Participation.where(:meal_id => meal.id).count)%></td>
           <td><%= meal.user.first_name %></td>
           <td>Entrée + Plat + Dessert </td>
           <% if (meal.nbpart - (Participation.where(:meal_id => meal.id).count)) == 0 %>
             <td>Ce repas est complet</td>
           <% else %>
+          <% if Participation.where(:user_id => current_user.id).exists? %>
           <td><%= link_to 'Carte', "http://maps.google.com/?q="+meal.user.street, :target => "_blank" %></td>
+          <%end%>
           <% if current_user.role == false %>
             <% if !Participation.where(:user_id => @user.id, :meal_id => meal.id).exists? %>
           <td><%= link_to "J'y vais", participations_path(:from => meal.id), method: :create %></td>

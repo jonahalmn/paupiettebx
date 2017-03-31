@@ -32,11 +32,13 @@ class MealsController < ApplicationController
 
   # GET /meals/me
   def me
+
     @me = true
     @title = "Les repas que vous organisez"
+    if Meal.count > 0
     @meals = current_user.meals.where("date >= ?", Time.current)
     @prev_meals = current_user.meals.where("date <= ?", Time.current)
-
+end
     render :index
   end
 
