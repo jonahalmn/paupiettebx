@@ -316,6 +316,29 @@ section.prix {
       display: none;
   }
 
+  .announce_title {
+    font-family: "Lato", sans-serif;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: -20px;
+    width: 300px;
+    background-color: #f0f0f0;
+    height: 50px;
+    color: #5a5a5a;
+    font-size: 24px;
+    font-weight: bold;
+    vertical-align: middle;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.background_announces h2 {
+    color: black;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 600px;
+}
+
   .icon-bars {
       padding: 22% 22% 0% 22%;
   }
@@ -590,9 +613,10 @@ td.table-plat {
 }
 
   //BODY ANNONCES EN PLACE
-  .background_announces{
-    color: white;
-    height: 500px;
+  .background_announces {
+      color: white;
+      height: 500px;
+      text-align: center;
   }
 
   .center_signup_bloc{
@@ -647,22 +671,6 @@ td.table-plat {
     text-align:left;
     padding: 5px 0px 5px 0px;
   }
-}
-
-.announce_title{
-  font-family: "Lato", sans-serif;
-  text-align: center;
-  padding-top: 10px;
-  margin-bottom: -20px;
-  width: 300px;
-  background-color: #f0f0f0;
-  height: 50px;
-  color: #A0A0A0;
-  font-size: 24px;
-  font-weight: bold;
-  margin-left: 265px;
-  margin-top: 20px;
-  vertical-align: middle;
 }
 
 
