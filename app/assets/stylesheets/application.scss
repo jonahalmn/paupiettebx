@@ -91,15 +91,20 @@ body {
 }
 
 .prix .paupiette-container .inner-container {
-    height: 500px;
     background-color: #72b28b;
     margin: 0.5%;
-    padding:30px;
+    padding:50px 25px;
 }
 
 .prix-img {
     text-align: center;
 }
+
+.prix-img img {
+    max-width: 100%;
+}
+
+
 
 section.prix {
     margin-bottom: 50px;
@@ -510,6 +515,22 @@ section.selfies-du-midi {
     text-align: center;
     font-family: "playlistscript";
     margin: 6px 0px;
+}
+
+.prix table{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+td.table-prix {
+    font-size: 70px;
+    font-family: "playlistscript";
+    width: 30%;
+    text-align: center;
+}
+
+td.table-plat {
+    font-size: 20px;
 }
 
   //BODY ANNONCES EN PLACE
